@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://s3cvey20yfsw"]
+
+[ext_resource type="Texture2D" uid="uid://bmoqj50j4o71d" path="res://assets/SpaceAliens/shipGreen_manned.png" id="1_7p1mj"]
+
+[node name="Enemy" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -3)
+scale = Vector2(0.814516, 0.752033)
+texture = ExtResource("1_7p1mj")

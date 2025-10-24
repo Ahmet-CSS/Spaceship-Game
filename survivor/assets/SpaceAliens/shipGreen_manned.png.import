@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmoqj50j4o71d"
-path="res://.godot/imported/shipGreen_manned.png-05c42110fa2b5099b23a8a91d86f3157.ctex"
+path="res://.godot/imported/shipGreen_manned.png-fe78a33f025fa3fa3ed37e76dce35f9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpaceAliens/shipGreen_manned.png"
-dest_files=["res://.godot/imported/shipGreen_manned.png-05c42110fa2b5099b23a8a91d86f3157.ctex"]
+source_file="res://assets/SpaceAliens/shipGreen_manned.png"
+dest_files=["res://.godot/imported/shipGreen_manned.png-fe78a33f025fa3fa3ed37e76dce35f9b.ctex"]
 
 [params]
 

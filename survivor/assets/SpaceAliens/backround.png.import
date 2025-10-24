@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwyq4870c0ne6"
-path="res://.godot/imported/laserGreen3.png-5478602c2d27fa3d191bbae3566b98d9.ctex"
+uid="uid://c4f7pmn4slwoh"
+path="res://.godot/imported/backround.png-45cf2c802d0bb521c14643d55875bc05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpaceAliens/laserGreen3.png"
-dest_files=["res://.godot/imported/laserGreen3.png-5478602c2d27fa3d191bbae3566b98d9.ctex"]
+source_file="res://assets/SpaceAliens/backround.png"
+dest_files=["res://.godot/imported/backround.png-45cf2c802d0bb521c14643d55875bc05.ctex"]
 
 [params]
 

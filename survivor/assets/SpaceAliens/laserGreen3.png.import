@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bff6mjtwo3h27"
-path="res://.godot/imported/shipYellow_manned.png-aab3ea957967d3ca26e354d511b0a4f4.ctex"
+uid="uid://cwyq4870c0ne6"
+path="res://.godot/imported/laserGreen3.png-17ce20167a99b9f537d5c820e409f87c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpaceAliens/shipYellow_manned.png"
-dest_files=["res://.godot/imported/shipYellow_manned.png-aab3ea957967d3ca26e354d511b0a4f4.ctex"]
+source_file="res://assets/SpaceAliens/laserGreen3.png"
+dest_files=["res://.godot/imported/laserGreen3.png-17ce20167a99b9f537d5c820e409f87c.ctex"]
 
 [params]
 

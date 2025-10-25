@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var speed := 500
 
+signal laser 
+
 func _ready() -> void:
 	position = Vector2(100, 500)
 	

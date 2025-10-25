@@ -1,7 +1,11 @@
 extends Area2D
 
-#@export var speed := 600.0
-#var direction := Vector2.UP
+@export var speed := 600.0
+var direction := Vector2.UP
+
+
+func _process(delta: float) -> void:
+	position += direction * speed *delta
 #
 ## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:

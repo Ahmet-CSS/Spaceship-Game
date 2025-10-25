@@ -16,7 +16,6 @@ func _on_timer_timeout() -> void:
 
 func _on_player_laser(pos: Vector2) -> void:
 	var laser = laser_scene.instantiate()
-	$Lasers.add_child(laser)
 	laser.position = pos
 	
 	#set direction to enemy

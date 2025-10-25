@@ -9,10 +9,14 @@ func _ready() -> void:
 	position = Vector2(100, 500)
 	
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var directon = Input.get_vector("move_left", "move_righ", "move_up", "move_down")
 	velocity = directon*speed
 	move_and_slide()
+	if directon.x != 0:
+		rotation = lerp_angle(rotation, deg_to_rad(directon.x * 15), 0.1)
+	else:
+		rotation = lerp_angle(rotation, 0, 0.1)
 	
 	if Input.is_action_just_pressed("shoot") and can_shoot:
 		laser.emit($LaserStartPos.global_position)

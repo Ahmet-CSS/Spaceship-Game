@@ -24,7 +24,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += Vector2(0, 1.0) * 400 *delta
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if player == null:
 		return
 	
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	velocity = direction*speed
 	move_and_slide()
 	
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	print("body enterned") # Replace with function body.
 
 

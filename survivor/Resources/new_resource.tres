@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Wallet" load_steps=2 format=3 uid="uid://d2iwvjmqgavwv"]
+
+[ext_resource type="Script" uid="uid://bpbh8u04f2asa" path="res://Resources/wallet.gd" id="1_8pcf5"]
+
+[resource]
+script = ExtResource("1_8pcf5")
+num_pickups = 100
+metadata/_custom_type_script = "uid://bpbh8u04f2asa"

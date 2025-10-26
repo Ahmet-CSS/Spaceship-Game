@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgjhfbd64fbc1"]
+
+[ext_resource type="Script" uid="uid://cl51qtylmuelg" path="res://Enemy/enemy_spawner.gd" id="1_cdwb3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2lmo"]
+size = Vector2(1085, 588)
+
+[node name="EnemySpawner" type="CollisionShape2D"]
+shape = SubResource("RectangleShape2D_n2lmo")
+script = ExtResource("1_cdwb3")
+
+[node name="SpawnTime" type="Timer" parent="."]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdghe2hrwaexh"]
+
+[ext_resource type="Script" uid="uid://bft72v3uttovo" path="res://Enemy/enemy.gd" id="1_epr5s"]
+[ext_resource type="Texture2D" uid="uid://bmoqj50j4o71d" path="res://Assets/SpaceAliens/shipGreen_manned.png" id="2_vonkd"]
+[ext_resource type="PackedScene" uid="uid://ci5p45aeepseh" path="res://Resources/XP.tscn" id="2_vso2s"]
+[ext_resource type="Script" uid="uid://fq3x6sec6msj" path="res://Enemy/health_bar.gd" id="3_vonkd"]
+
+[node name="Enemy2" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+script = ExtResource("1_epr5s")
+xp_pickup_scene = ExtResource("2_vso2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Enemy"]]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(2, -3)
+scale = Vector2(0.81, 0.75)
+texture = ExtResource("2_vonkd")
+
+[node name="HealthBar" type="Node2D" parent="."]
+position = Vector2(0, -54)
+script = ExtResource("3_vonkd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-17, -43, -11, -47, -6, -49, 8, -49, 16, -46, 22, -41, 26, -35, 28, -27, 28, -20, 27, -16, 25, -12, 22, -9, 20, -7, 20, -6, 24, -6, 27, -5, 30, -4, 35, -2, 38, 0, 40, 1, 41, 0, 42, -1, 48, -1, 50, 0, 52, 3, 52, 6, 52, 8, 51, 9, 50, 10, 52, 12, 53, 13, 53, 20, 50, 22, 47, 23, 45, 24, 43, 25, 42, 24, 42, 26, 41, 28, 39, 30, 37, 32, 34, 35, 29, 38, 25, 39, 20, 41, 20, 41, 16, 42, 11, 43, -4, 43, -14, 42, -19, 40, -24, 37, -31, 34, -36, 29, -38, 26, -38, 25, -41, 24, -44, 22, -47, 20, -49, 20, -49, 13, -46, 10, -48, 8, -48, 3, -46, 1, -45, 0, -44, -1, -38, -1, -37, 0, -37, 1, -36, 1, -34, -1, -31, -2, -23, -5, -18, -6, -17, -7, -20, -10, -23, -15, -25, -20, -26, -24, -25, -30, -24, -35, -22, -38, -18, -42)

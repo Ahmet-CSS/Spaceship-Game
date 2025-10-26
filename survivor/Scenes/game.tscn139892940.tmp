@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dduc54np40l3g"]
+
+[ext_resource type="Script" uid="uid://xy6n6m434n3y" path="res://Scenes/game.gd" id="1_5diyh"]
+[ext_resource type="PackedScene" uid="uid://bq2fxemi6ggwn" path="res://Player/player.tscn" id="2_e6lhs"]
+[ext_resource type="PackedScene" uid="uid://cukgvwhc8cpcd" path="res://Pickups/pickup.tscn" id="3_ff4o0"]
+[ext_resource type="PackedScene" uid="uid://eeexkrvtsmd8" path="res://Pickups/PickupSpawner.tscn" id="4_qcbus"]
+[ext_resource type="PackedScene" uid="uid://cm3ohia2xoi3q" path="res://UI/pickup_counter.tscn" id="5_ehego"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_5diyh")
+
+[node name="Player" parent="." instance=ExtResource("2_e6lhs")]
+position = Vector2(296, 414)
+
+[node name="Pickup" parent="." instance=ExtResource("3_ff4o0")]
+position = Vector2(646, 274)
+
+[node name="PickupSpawner" parent="." node_paths=PackedStringArray("pickup_container") instance=ExtResource("4_qcbus")]
+position = Vector2(578.5, 323)
+spawn_time = 1.0
+pickup_container = NodePath("../PickupContainer")
+
+[node name="PickupContainer" type="Node" parent="."]
+
+[node name="PickupCounter" parent="." instance=ExtResource("5_ehego")]

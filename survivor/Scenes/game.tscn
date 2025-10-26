@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dduc54np40l3g"]
+
+[ext_resource type="Script" uid="uid://xy6n6m434n3y" path="res://Scenes/game.gd" id="1_5diyh"]
+[ext_resource type="PackedScene" uid="uid://bq2fxemi6ggwn" path="res://Player/player.tscn" id="2_e6lhs"]
+[ext_resource type="PackedScene" uid="uid://dp3pan2ri4doa" path="res://UI/pause_menu.tscn" id="2_i6g32"]
+[ext_resource type="PackedScene" uid="uid://4r8x2508f57f" path="res://UI/GameOverMenu.tscn" id="3_i6g32"]
+[ext_resource type="Texture2D" uid="uid://dh460ufxe77f8" path="res://Assets/SpaceAliens/backround.png" id="4_i6g32"]
+[ext_resource type="PackedScene" uid="uid://bgjhfbd64fbc1" path="res://Enemy/EnemySpawner.tscn" id="4_qcbus"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_5diyh")
+pause_menu = ExtResource("2_i6g32")
+game_over_menu = ExtResource("3_i6g32")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(627, 119.99997)
+scale = Vector2(1.421875, 1.1640625)
+texture = ExtResource("4_i6g32")
+
+[node name="Player" parent="." instance=ExtResource("2_e6lhs")]
+position = Vector2(576, 326)
+
+[node name="EnemySpawner" parent="." node_paths=PackedStringArray("enemy_container") instance=ExtResource("4_qcbus")]
+position = Vector2(578.5, 323)
+enemy_container = NodePath("../EnemyContainer")
+
+[node name="EnemyContainer" type="Node2D" parent="."]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci5p45aeepseh"]
+
+[ext_resource type="Texture2D" path="res://Resources/xp_circle.tres" id="1_f6lag"]
+[ext_resource type="Script" uid="uid://c6j2oebgd5lqc" path="res://Resources/XPPickup.gd" id="1_k2ruk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w0rbq"]
+
+[node name="Xp" type="Area2D"]
+script = ExtResource("1_k2ruk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w0rbq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_f6lag")

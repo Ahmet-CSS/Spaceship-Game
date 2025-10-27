@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	position += Vector2(0, 1.0) * 400 *delta
+	position += Vector2(0, 1.0) * 100 *delta
 	
 func _physics_process(_delta: float) -> void:
 	if player == null:

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://behb3gm8tsb8t"]
+
+[ext_resource type="Texture2D" uid="uid://bpashs41saun8" path="res://assets/UIPack-SciFi/uipackSpace_sheet.png" id="1_t8ked"]
+
+[resource]
+atlas = ExtResource("1_t8ked")
+region = Rect2(415.5, 218.05, 95.7, 28.6)

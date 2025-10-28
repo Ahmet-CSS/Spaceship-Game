@@ -34,7 +34,7 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/default_color = Color(1, 0.32895616, 0.3218531, 1)
+theme_override_colors/default_color = Color(1, 0.328956, 0.321853, 1)
 bbcode_enabled = true
 text = "[font_size=68] 306 Survivors "
 fit_content = true

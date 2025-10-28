@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdghe2hrwaexh"]
 
 [ext_resource type="Script" uid="uid://bft72v3uttovo" path="res://Enemy/enemy.gd" id="1_epr5s"]
-[ext_resource type="Texture2D" uid="uid://bmoqj50j4o71d" path="res://Assets/SpaceAliens/shipGreen_manned.png" id="2_vonkd"]
+[ext_resource type="Texture2D" uid="uid://bmoqj50j4o71d" path="res://assets/SpaceAliens/shipGreen_manned.png" id="2_vonkd"]
 [ext_resource type="PackedScene" uid="uid://ci5p45aeepseh" path="res://Resources/XP.tscn" id="2_vso2s"]
 [ext_resource type="Script" uid="uid://fq3x6sec6msj" path="res://Enemy/health_bar.gd" id="3_vonkd"]
 

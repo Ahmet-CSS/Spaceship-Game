@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://4gr0umo4ekb3"]
+
+[ext_resource type="Script" uid="uid://cdhm4n886rnk0" path="res://UI/hpxp_ui.gd" id="1_gb3bk"]
+[ext_resource type="Texture2D" uid="uid://bf32bscl68bko" path="res://UI/health_empty.tres" id="1_ujm5b"]
+[ext_resource type="Texture2D" uid="uid://cuqxfc1ipi53t" path="res://UI/health_frame.tres" id="2_5gxog"]
+[ext_resource type="Texture2D" uid="uid://dktgbdravx02o" path="res://UI/health_fill.tres" id="3_ooyr2"]
+[ext_resource type="Texture2D" uid="uid://behb3gm8tsb8t" path="res://UI/xp_empty.tres" id="4_ooyr2"]
+[ext_resource type="Texture2D" uid="uid://bth0afyxld3hl" path="res://UI/xp_frame.tres" id="5_gb3bk"]
+[ext_resource type="Texture2D" uid="uid://bthsxlgvxno36" path="res://UI/xp_fill.tres" id="5_x50lp"]
+
+[node name="HPXP_UI" type="CanvasLayer"]
+script = ExtResource("1_gb3bk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health" type="TextureProgressBar" parent="CanvasLayer"]
+offset_right = 102.0
+offset_bottom = 40.0
+value = 100.0
+texture_under = ExtResource("1_ujm5b")
+texture_over = ExtResource("2_5gxog")
+texture_progress = ExtResource("3_ooyr2")
+
+[node name="XP" type="TextureProgressBar" parent="CanvasLayer"]
+offset_top = 40.0
+offset_right = 101.0
+offset_bottom = 80.0
+texture_under = ExtResource("4_ooyr2")
+texture_over = ExtResource("5_gb3bk")
+texture_progress = ExtResource("5_x50lp")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7rqsmrgorcim"]
 
-[ext_resource type="Texture2D" uid="uid://cwyq4870c0ne6" path="res://Assets/SpaceAliens/laserGreen3.png" id="1_hnj4y"]
+[ext_resource type="Texture2D" uid="uid://cwyq4870c0ne6" path="res://assets/SpaceAliens/laserGreen3.png" id="1_hnj4y"]
 [ext_resource type="Script" uid="uid://jjunb5dykfa" path="res://Player/bullet.gd" id="1_js047"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_js047"]
@@ -12,8 +12,8 @@ collision_mask = 2
 script = ExtResource("1_js047")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4.7683716e-07, 0)
-scale = Vector2(0.7879705, 0.9241073)
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.78797, 0.924107)
 texture = ExtResource("1_hnj4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

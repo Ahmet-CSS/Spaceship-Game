@@ -1,12 +1,13 @@
-CanvasLayer
-TextureProgressBar
-Control
+Label
 Sprite2D
+TextureRect
+TextureProgressBar
+CanvasLayer
+Control
 Area2D
 Node2D
 ColorRect
 Button
-Label
 VBoxContainer
 CenterContainer
 CollisionShape2D

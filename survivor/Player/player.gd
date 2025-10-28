@@ -10,7 +10,7 @@ extends CharacterBody2D	# indicates the type of Node this script is attached to
 ## which is a physics node
 var tilt_angle := 0.0
 
-var health = 30
+
 
 # Fire settings
 @export var fire_interval: float = 1.0       
@@ -22,8 +22,14 @@ var _fire_cooldown: float = 0.0
 signal died
 var stats: PlayerStatus
 
+@onready var ui = get_tree().get_first_node_in_group("ui")
+var xp := 0
+
+
 func _ready() -> void:
 	add_to_group("Player")
+	ui.update_health(80)
+	ui.update_xp(25)
 
 # Find nearest Enemy within detection radius
 func _pick_target() -> Node2D:
@@ -100,11 +106,15 @@ func _physics_process(_delta:float) -> void:
 	
 # forward damage to stats, die when no HP
 func take_damage(amount: int) -> void:
-	var ui = get_tree().get_first_node_in_group("ui")
-	ui.update_health(health)
 	if stats == null:
 		return
 	stats.take_damage(amount)
+	ui.update_health(stats.hp)
 	if stats.hp <= 0:
 		emit_signal("died")
 		
+
+
+func gain_xp(amount: int) -> void:
+	xp += amount
+	ui.update_xp(xp)

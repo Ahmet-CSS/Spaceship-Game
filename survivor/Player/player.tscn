@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq2fxemi6ggwn"]
 
 [ext_resource type="Script" uid="uid://b07hkds215ol3" path="res://Player/player.gd" id="1_5j8kf"]
-[ext_resource type="Texture2D" uid="uid://bff6mjtwo3h27" path="res://assets/SpaceAliens/shipYellow_manned.png" id="2_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://bff6mjtwo3h27" path="res://SpaceAliens/shipYellow_manned.png" id="2_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://c7rqsmrgorcim" path="res://Player/Bullet.tscn" id="2_btcbx"]
 
 [node name="Player" type="CharacterBody2D"]

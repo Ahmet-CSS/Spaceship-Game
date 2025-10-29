@@ -22,14 +22,13 @@ var _fire_cooldown: float = 0.0
 signal died
 var stats: PlayerStatus
 
-@onready var ui = get_tree().get_first_node_in_group("ui")
+@onready var ui: Node = null
 var xp := 0
+
 
 
 func _ready() -> void:
 	add_to_group("Player")
-	ui.update_health(80)
-	ui.update_xp(25)
 
 # Find nearest Enemy within detection radius
 func _pick_target() -> Node2D:
@@ -79,7 +78,7 @@ func _shoot(dir: Vector2, target: Node2D = null) -> void:
 
 func _physics_process(_delta:float) -> void:
 	# Movement
-	var input_direction = Input.get_vector("left", "right", "up", "down")
+	var input_direction = Input.get_vector("left","right","up","down")
 	velocity = input_direction * speed
 	move_and_slide()
 	
@@ -106,15 +105,11 @@ func _physics_process(_delta:float) -> void:
 	
 # forward damage to stats, die when no HP
 func take_damage(amount: int) -> void:
-	if stats == null:
-		return
+	if stats == null: return
 	stats.take_damage(amount)
-	ui.update_health(stats.hp)
 	if stats.hp <= 0:
 		emit_signal("died")
-		
-
 
 func gain_xp(amount: int) -> void:
-	xp += amount
-	ui.update_xp(xp)
+	if stats == null: return
+	stats.add_xp(amount)

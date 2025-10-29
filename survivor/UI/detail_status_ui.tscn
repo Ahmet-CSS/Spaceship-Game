@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7kuvbfw07o3a"]
+
+[ext_resource type="Texture2D" uid="uid://cmpivbiiqxwxo" path="res://UI/status_panel.tres" id="1_281h4"]
+
+[node name="DetailStatus_UI" type="CanvasLayer" groups=["ui"]]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 11.0
+offset_top = 235.0
+offset_right = 241.0
+offset_bottom = 710.0
+texture = ExtResource("1_281h4")
+patch_margin_left = 12
+patch_margin_top = 25
+patch_margin_right = 12
+patch_margin_bottom = 12

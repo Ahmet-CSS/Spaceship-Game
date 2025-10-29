@@ -1,10 +1,22 @@
 extends CanvasLayer
 
 @onready var health_bar = $Health
-@onready var xp_bar = $XP
+@onready var xp_bar     = $XP
+@onready var level_label: Label = $Frame/LvlText
 
-func update_health(value: float):
-	health_bar.value = clamp(value, 0, health_bar.max)
+var stats: PlayerStatus
 
-func update_xp(value: float):
-	xp_bar.value = clamp(value, 0, xp_bar.max)
+func bind_stats(s: PlayerStatus) -> void:
+	if stats and stats.stats_changed.is_connected(_on_stats_changed):
+		stats.stats_changed.disconnect(_on_stats_changed)
+	stats = s
+	stats.stats_changed.connect(_on_stats_changed)
+	_on_stats_changed()
+
+func _on_stats_changed() -> void:
+	if stats == null: return
+	health_bar.max_value = stats.max_hp
+	health_bar.value     = stats.hp
+	level_label.text = str(stats.level())
+	xp_bar.max_value = 5
+	xp_bar.value     = stats.xp_in_level()

@@ -1,8 +1,9 @@
-Label
-Sprite2D
+NinePatchRect
 TextureRect
 TextureProgressBar
 CanvasLayer
+Label
+Sprite2D
 Control
 Area2D
 Node2D

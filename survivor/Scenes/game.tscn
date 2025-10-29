@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dduc54np40l3g"]
+[gd_scene load_steps=9 format=3 uid="uid://dduc54np40l3g"]
 
 [ext_resource type="Script" uid="uid://xy6n6m434n3y" path="res://Scenes/game.gd" id="1_5diyh"]
 [ext_resource type="PackedScene" uid="uid://bq2fxemi6ggwn" path="res://Player/player.tscn" id="2_e6lhs"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://4r8x2508f57f" path="res://UI/GameOverMenu.tscn" id="3_i6g32"]
 [ext_resource type="Texture2D" uid="uid://dh460ufxe77f8" path="res://assets/SpaceAliens/backround.png" id="4_i6g32"]
 [ext_resource type="PackedScene" uid="uid://bgjhfbd64fbc1" path="res://Enemy/EnemySpawner.tscn" id="4_qcbus"]
+[ext_resource type="PackedScene" uid="uid://4gr0umo4ekb3" path="res://UI/hpxp_ui.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://c7kuvbfw07o3a" path="res://UI/detail_status_ui.tscn" id="8_v158k"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_5diyh")
@@ -25,3 +27,7 @@ position = Vector2(578.5, 323)
 enemy_container = NodePath("../EnemyContainer")
 
 [node name="EnemyContainer" type="Node2D" parent="."]
+
+[node name="HPXP_UI" parent="." instance=ExtResource("7_1l0tm")]
+
+[node name="DetailStatus_UI" parent="." instance=ExtResource("8_v158k")]

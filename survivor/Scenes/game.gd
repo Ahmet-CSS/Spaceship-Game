@@ -18,6 +18,10 @@ func _ready() -> void:
 	$Player.stats = player_stats
 	$Player.died.connect(_on_player_died)
 	
+	var ui = get_tree().get_first_node_in_group("ui")
+	if ui and "bind_stats" in ui:
+		ui.bind_stats(player_stats)
+	
 func _on_player_died() -> void:
 	# Freeze time and show game-over menu
 	Engine.time_scale = 0.0

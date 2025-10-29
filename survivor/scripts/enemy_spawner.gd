@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var enemy_scene: PackedScene = preload("res://scenes/enemy.tscn")
+@export var enemy_scene: PackedScene = preload("res://scenes/Enemy.tscn")
 @export var spawn_position := Vector2(400, 300)
 
 func _ready() -> void:

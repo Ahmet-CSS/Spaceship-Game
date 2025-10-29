@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://4gr0umo4ekb3"]
 
 [ext_resource type="Script" uid="uid://cdhm4n886rnk0" path="res://UI/hpxp_ui.gd" id="1_gb3bk"]
-[ext_resource type="Texture2D" uid="uid://bf32bscl68bko" path="res://UI/health_empty.tres" id="1_ujm5b"]
+[ext_resource type="Texture2D" uid="uid://bf32bscl68bko" path="res://UI/empty.tres" id="1_ujm5b"]
 [ext_resource type="Texture2D" uid="uid://dktgbdravx02o" path="res://UI/health_fill.tres" id="3_ooyr2"]
-[ext_resource type="Texture2D" uid="uid://bpashs41saun8" path="res://assets/UIPack-SciFi/uipackSpace_sheet.png" id="3_x50lp"]
-[ext_resource type="Texture2D" uid="uid://dfe5axvxinbc5" path="res://UI/xp_under.tres" id="5_gb3bk"]
+[ext_resource type="Texture2D" uid="uid://bpashs41saun8" path="res://UIPack-SciFi/uipackSpace_sheet.png" id="3_x50lp"]
+[ext_resource type="Texture2D" uid="uid://dfe5axvxinbc5" path="res://UI/under.tres" id="5_gb3bk"]
 [ext_resource type="Texture2D" uid="uid://cdvoijlve016p" path="res://UI/xp_fill.tres" id="5_x50lp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gb3bk"]
@@ -17,7 +17,7 @@ script = ExtResource("1_gb3bk")
 [node name="Health" type="TextureProgressBar" parent="."]
 offset_left = 61.0
 offset_top = 3.0
-offset_right = 211.0
+offset_right = 281.0
 offset_bottom = 35.0
 value = 100.0
 nine_patch_stretch = true
@@ -28,7 +28,7 @@ texture_progress = ExtResource("3_ooyr2")
 [node name="XP" type="TextureProgressBar" parent="."]
 offset_left = 61.0
 offset_top = 35.0
-offset_right = 211.0
+offset_right = 281.0
 offset_bottom = 67.0
 value = 75.0
 nine_patch_stretch = true
@@ -42,7 +42,7 @@ texture = ExtResource("3_x50lp")
 region_enabled = true
 region_rect = Rect2(101, 199, 98, 100)
 
-[node name="Label" type="Label" parent="Frame"]
+[node name="LvlText" type="Label" parent="Frame"]
 offset_left = -29.037
 offset_top = -37.2727
 offset_right = 26.963

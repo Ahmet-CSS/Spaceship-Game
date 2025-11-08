@@ -19,10 +19,9 @@ func _ready() -> void:
 	$Player.stats = player_stats
 	$Player.died.connect(_on_player_died)
 	
-	var ui = get_tree().get_first_node_in_group("ui")
-	if ui and "bind_stats" in ui:
-		ui.bind_stats(player_stats)
-		
+	for u in get_tree().get_nodes_in_group("ui"):
+		if "bind_stats" in u:
+			u.bind_stats(player_stats)
 	player_stats.level_up_ready.connect(_on_level_up_ready)
 	
 func _on_level_up_ready(options: Array) -> void:

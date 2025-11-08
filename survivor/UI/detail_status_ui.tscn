@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7kuvbfw07o3a"]
+[gd_scene load_steps=3 format=3 uid="uid://c7kuvbfw07o3a"]
 
 [ext_resource type="Texture2D" uid="uid://cmpivbiiqxwxo" path="res://UI/status_panel.tres" id="1_281h4"]
+[ext_resource type="Script" uid="uid://e2yu8wqqngff" path="res://UI/detail_status_ui.gd" id="1_ifh0l"]
 
 [node name="DetailStatus_UI" type="CanvasLayer" groups=["ui"]]
+script = ExtResource("1_ifh0l")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_left = 11.0
@@ -15,18 +17,17 @@ patch_margin_top = 25
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Title" type="Label" parent="."]
-offset_left = 11.0
-offset_top = 235.0
-offset_right = 241.0
-offset_bottom = 282.0
+[node name="StatusTitle" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 230.0
+offset_bottom = 47.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Status"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Title"]
+[node name="Status" type="Label" parent="NinePatchRect/StatusTitle"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 56.0
@@ -34,3 +35,4 @@ offset_right = 225.0
 offset_bottom = 462.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
+autowrap_mode = 2

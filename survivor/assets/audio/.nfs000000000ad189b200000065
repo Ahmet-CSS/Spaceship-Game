@@ -1,0 +1,49 @@
+﻿Sound and Music License Information 					Date: November 2025
+-----------------------------------
+
+All audio used in this project was legally obtained from free, royalty-free sources.
+Below are the sources and license details for each sound and music asset used.
+
+1. Clicking on a UI button 
+   Source: https://mixkit.co/free-sound-effects/player
+   File: mixkit-clicking-on-UI-button-2037.mp3
+   License: Mixkit Free License (Free for commercial and non-commercial use, no attribution required)
+
+2. Opening/closing a menu (i.e., Options menu, Pause menu)
+   Source: https://mixkit.co/free-sound-effects/player
+   File: mixkit-Opening-closing-menu-221.wav
+   License: Mixkit Free License (Free for commercial and non-commercial use, no attribution required)
+
+3. Background music should be playing on loop in the Main Menu and in the game
+   Source: https://mixkit.co/free-sound-effects/player
+   File: mixkit-Backround-music-686.wav
+   License: Mixkit Free License (Free for commercial and non-commercial use, no attribution required)
+
+4.  Player shoots a projectile
+   Source: https://mixkit.co/free-sound-effects/shot
+   File: mixkit-sci-fi-laser-in-space-sound-2825.wav
+   License: Mixkit Free License (Free for commercial and non-commercial use, no attribution required)
+
+5. A sound should play when a projectile collides with the enemy and the enemy takes damage
+   Source: https://mixkit.co/free-sound-effects/player
+   File: mixkit-projectile-collides-with-enemy-757.wav
+   License: Mixkit Free License (Free for commercial and non-commercial use, no attribution required)
+
+6. A sound should play when the player takes damage
+   Source: https://mixkit.co/free-sound-effects/lose
+   File: mixkit-player-takes-damage-2053.wav
+   License: Mixkit Free License (Free for commercial and non-commercial use, no attribution required)
+
+7. A sound should play when an XP pickup is collected
+   Source: https://mixkit.co/free-sound-effects/win
+   File: mixkit-player-picks-XP-2043.wav
+   License: Mixkit Free License (Free for commercial and non-commercial use, no attribution required)
+
+8. A sound should play when the player is moving, and stop when the player is not moving
+   Source: https://mixkit.co/free-sound-effects/asteroid
+   File: mixkit-player-moving-3026.wav
+   License: Mixkit Free License (Free for commercial and non-commercial use, no attribution required)
+-----------------------------------
+Project: CMPT 306 Group Project – 306 Survivor
+Team Members: Ahmet Guldadov,  Carson Lui
+

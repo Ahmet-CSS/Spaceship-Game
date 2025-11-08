@@ -3,6 +3,7 @@ extends Node
 # Overlay scenes
 @export var pause_menu: PackedScene
 @export var game_over_menu: PackedScene
+@export var levelup_menu: PackedScene
 
 var paused: bool = false
 var player_stats: PlayerStatus = PlayerStatus.new()
@@ -21,6 +22,19 @@ func _ready() -> void:
 	var ui = get_tree().get_first_node_in_group("ui")
 	if ui and "bind_stats" in ui:
 		ui.bind_stats(player_stats)
+		
+	player_stats.level_up_ready.connect(_on_level_up_ready)
+	
+func _on_level_up_ready(options: Array) -> void:
+	print("[LVL-UP] received options: ", options)
+	if levelup_menu == null: return
+	var m = levelup_menu.instantiate()
+	add_child(m)
+	m.show_options(options)
+	m.chosen.connect(func(key: String):
+		player_stats.apply_upgrade(key)
+		Engine.time_scale = 1.0
+	)
 	
 func _on_player_died() -> void:
 	# Freeze time and show game-over menu

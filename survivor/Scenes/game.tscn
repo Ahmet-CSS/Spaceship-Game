@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dduc54np40l3g"]
+[gd_scene load_steps=10 format=3 uid="uid://dduc54np40l3g"]
 
 [ext_resource type="Script" uid="uid://xy6n6m434n3y" path="res://Scenes/game.gd" id="1_5diyh"]
 [ext_resource type="PackedScene" uid="uid://bq2fxemi6ggwn" path="res://Player/player.tscn" id="2_e6lhs"]
 [ext_resource type="PackedScene" uid="uid://dp3pan2ri4doa" path="res://UI/pause_menu.tscn" id="2_i6g32"]
 [ext_resource type="PackedScene" uid="uid://4r8x2508f57f" path="res://UI/GameOverMenu.tscn" id="3_i6g32"]
+[ext_resource type="PackedScene" uid="uid://ugpblaluoyhb" path="res://UI/LevelUpMenu.tscn" id="4_h4fw4"]
 [ext_resource type="Texture2D" uid="uid://dh460ufxe77f8" path="res://assets/SpaceAliens/backround.png" id="4_i6g32"]
 [ext_resource type="PackedScene" uid="uid://bgjhfbd64fbc1" path="res://Enemy/EnemySpawner.tscn" id="4_qcbus"]
 [ext_resource type="PackedScene" uid="uid://4gr0umo4ekb3" path="res://UI/hpxp_ui.tscn" id="7_1l0tm"]
@@ -13,6 +14,7 @@
 script = ExtResource("1_5diyh")
 pause_menu = ExtResource("2_i6g32")
 game_over_menu = ExtResource("3_i6g32")
+levelup_menu = ExtResource("4_h4fw4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(627, 120)

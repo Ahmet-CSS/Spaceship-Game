@@ -1,0 +1,131 @@
+[gd_scene load_steps=12 format=3 uid="uid://ugpblaluoyhb"]
+
+[ext_resource type="Script" uid="uid://da8frb4ifuf4w" path="res://UI/level_up_menu.gd" id="1_krf5r"]
+[ext_resource type="Texture2D" uid="uid://bpashs41saun8" path="res://UIPack-SciFi/uipackSpace_sheet.png" id="1_yb062"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krf5r"]
+atlas = ExtResource("1_yb062")
+region = Rect2(0, 0, 100, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb062"]
+atlas = ExtResource("1_yb062")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krf5r"]
+texture = SubResource("AtlasTexture_yb062")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv2p0"]
+atlas = ExtResource("1_yb062")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44hg0"]
+texture = SubResource("AtlasTexture_lv2p0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvn8s"]
+atlas = ExtResource("1_yb062")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_airwe"]
+texture = SubResource("AtlasTexture_vvn8s")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wqeb"]
+atlas = ExtResource("1_yb062")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hwhr"]
+texture = SubResource("AtlasTexture_3wqeb")
+
+[node name="LevelUpMenu" type="CanvasLayer"]
+script = ExtResource("1_krf5r")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 170.0
+offset_right = 890.0
+offset_bottom = 520.0
+texture = SubResource("AtlasTexture_krf5r")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 190.0
+offset_right = 890.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Level Up!"
+horizontal_alignment = 1
+
+[node name="OptionA" type="Button" parent="Panel"]
+clip_contents = true
+layout_mode = 0
+offset_left = 430.0
+offset_top = 240.0
+offset_right = 630.0
+offset_bottom = 475.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_krf5r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_44hg0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_airwe")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_2hwhr")
+
+[node name="title" type="Label" parent="Panel/OptionA"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="description" type="Label" parent="Panel/OptionA"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 70.0
+offset_right = 192.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="OptionB" type="Button" parent="Panel"]
+clip_contents = true
+layout_mode = 0
+offset_left = 650.0
+offset_top = 240.0
+offset_right = 850.0
+offset_bottom = 475.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_krf5r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_44hg0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_airwe")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_2hwhr")
+
+[node name="title" type="Label" parent="Panel/OptionB"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="description" type="Label" parent="Panel/OptionB"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 70.0
+offset_right = 192.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+autowrap_mode = 2
+text_overrun_behavior = 2

@@ -7,6 +7,7 @@ extends Area2D
 @export var turn_rate_deg: float = 720.0
 # Destroy range when close to target
 @export var stop_distance: float = 12.0
+@export var damage: int = 1
 
 # Movement direction
 var direction: Vector2 = Vector2.RIGHT
@@ -42,8 +43,7 @@ func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 
 func _on_area_entered(area: Area2D) -> void:
-	var e := area as Node
-	e.apply_damage(1)
-	# Remove bullet after hit
+	if area.has_method("apply_damage"):
+		area.apply_damage(damage)
 	queue_free()
 		

@@ -2,7 +2,7 @@ class_name Player # allows this script to be treated as type Player
 
 extends CharacterBody2D	# indicates the type of Node this script is attached to
 
-@export var speed = 220	# A speed variable that determines how many pixels the object should move per second
+@export var base_speed: float = 220.0	# A speed variable that determines how many pixels the object should move per second
 # @export allows this variable to be configured in the inspector, instead of needing to hardcode value in script
 
 # this method is called each time a step in the physics simulation is calculated
@@ -17,6 +17,7 @@ var tilt_angle := 0.0
 @export var detection_radius: float = 400.0  
 @export var bullet_scene: PackedScene        
 @export var bullet_speed: float = 400.0
+@export var base_bullet_damage: int = 1
 var _fire_cooldown: float = 0.0
 
 signal died
@@ -53,33 +54,31 @@ func _random_dir() -> Vector2:
 	return Vector2(cos(a), sin(a))
 
 
-func _shoot(dir: Vector2, target: Node2D = null) -> void:
-	# create a new bullet instance
-	if bullet_scene == null:
-		return
+func _shoot(dir: Vector2, target: Node2D=null) -> void:
+	if bullet_scene == null: return
 	var b := bullet_scene.instantiate() as Node2D
-	
-	# spawn at player position
 	b.global_position = global_position
-	
-	# set bullet movement data
-	if "direction" in b:
-		b.direction = dir
-	if "velocity" in b:
-		b.velocity = dir * bullet_speed
+	if "direction" in b: b.direction = dir
 	if "speed" in b:
-		b.speed = bullet_speed
-	if "target" in b:
-		b.target = target
-		
-	# add bullet to scene
+		var spd := bullet_speed
+		if stats != null: spd *= stats.bullet_speed_mul
+		b.speed = spd
+	if "target" in b: b.target = target
+	var dmg := base_bullet_damage
+	if stats != null:
+		dmg += stats.damage_plus
+	if "damage" in b:
+		b.damage = dmg
 	get_tree().current_scene.add_child(b)
 
 
 func _physics_process(_delta:float) -> void:
 	# Movement
-	var input_direction = Input.get_vector("left","right","up","down")
-	velocity = input_direction * speed
+	var input_dir = Input.get_vector("left","right","up","down")
+	var spd := base_speed
+	if stats != null:
+		spd *= stats.move_speed_mul
+	velocity = input_dir * spd
 	move_and_slide()
 	
 	# Fire settings
@@ -96,9 +95,9 @@ func _physics_process(_delta:float) -> void:
 		
 	# Tilting
 	var tilt_target := 0.0
-	if input_direction.x > 0:
+	if input_dir.x > 0:
 		tilt_target = 20
-	elif input_direction.x < 0:
+	elif input_dir.x < 0:
 		tilt_target = -20
 	tilt_angle = lerp(tilt_angle, tilt_target, 0.1) # smooth tilt
 	rotation_degrees = tilt_angle # apply rotation

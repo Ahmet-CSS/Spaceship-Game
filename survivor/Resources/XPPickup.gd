@@ -9,6 +9,7 @@ func _ready() -> void:
 func _on_body_entered(b: Node) -> void:
 	# only player can collect and only if it has stats
 	if b is Player and b.stats:
+		print("[XP] pickup hit player, +", value)
 		b.stats.add_xp(value)
 		# remove xp after collection
 		queue_free()

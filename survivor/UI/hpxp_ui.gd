@@ -17,6 +17,8 @@ func _on_stats_changed() -> void:
 	if stats == null: return
 	health_bar.max_value = stats.max_hp
 	health_bar.value     = stats.hp
-	level_label.text = str(stats.level())
-	xp_bar.max_value = 5
-	xp_bar.value     = stats.xp_in_level()
+	
+	level_label.text     = str(stats.level())
+	
+	xp_bar.max_value     = stats.xp_to_next
+	xp_bar.value         = stats.xp_in_level()

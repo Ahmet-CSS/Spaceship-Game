@@ -11,8 +11,6 @@ func _on_timer_timeout() -> void:
 	# attach the node to the scene tree
 	$Enemies.add_child(enemy)
 	
-	
-
 
 func _on_player_laser(pos: Vector2) -> void:
 	var laser = laser_scene.instantiate()

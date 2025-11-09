@@ -1,3 +1,6 @@
+AudioStreamPlayer
+Node
+Node2D
 Label
 VBoxContainer
 Button
@@ -9,6 +12,3 @@ NinePatchRect
 Sprite2D
 Control
 Area2D
-Node2D
-ColorRect
-CenterContainer

@@ -41,11 +41,13 @@ func _ready() -> void:
 	visible = false
 	btn_a.pressed.connect(func():
 		Engine.time_scale = 1.0
+		get_tree().current_scene.sfx("click")
 		emit_signal("chosen", opt_a.get("key"))
 		queue_free()
 	)
 	btn_b.pressed.connect(func():
 		Engine.time_scale = 1.0
+		get_tree().current_scene.sfx("click")
 		emit_signal("chosen", opt_b.get("key"))
 		queue_free()
 	)

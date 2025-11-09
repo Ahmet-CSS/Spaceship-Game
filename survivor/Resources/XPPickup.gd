@@ -12,4 +12,5 @@ func _on_body_entered(b: Node) -> void:
 		print("[XP] pickup hit player, +", value)
 		b.stats.add_xp(value)
 		# remove xp after collection
+		get_tree().current_scene.sfx("xp")
 		queue_free()

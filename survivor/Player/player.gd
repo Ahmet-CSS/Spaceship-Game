@@ -10,7 +10,7 @@ extends CharacterBody2D	# indicates the type of Node this script is attached to
 ## which is a physics node
 var tilt_angle := 0.0
 
-
+var _moving := false
 
 # Fire settings
 @export var fire_interval: float = 1.0       
@@ -70,6 +70,7 @@ func _shoot(dir: Vector2, target: Node2D=null) -> void:
 	if "damage" in b:
 		b.damage = dmg
 	get_tree().current_scene.add_child(b)
+	get_tree().current_scene.sfx("shoot")
 
 
 func _physics_process(_delta:float) -> void:
@@ -79,6 +80,14 @@ func _physics_process(_delta:float) -> void:
 	if stats != null:
 		spd *= stats.move_speed_mul
 	velocity = input_dir * spd
+	if input_dir.length() > 0.01:
+		if !_moving:
+			_moving = true
+			get_tree().current_scene.sfx("move_on")
+	else:
+		if _moving:
+			_moving = false
+			get_tree().current_scene.sfx("move_off")
 	move_and_slide()
 	
 	# Fire settings
@@ -106,6 +115,7 @@ func _physics_process(_delta:float) -> void:
 func take_damage(amount: int) -> void:
 	if stats == null: return
 	stats.take_damage(amount)
+	get_tree().current_scene.sfx("takedmg")
 	if stats.hp <= 0:
 		emit_signal("died")
 

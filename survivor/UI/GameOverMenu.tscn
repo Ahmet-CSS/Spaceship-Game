@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://4r8x2508f57f"]
+[gd_scene load_steps=3 format=3 uid="uid://4r8x2508f57f"]
 
 [ext_resource type="Script" uid="uid://c6tajk0cdttgs" path="res://UI/game_over_menu.gd" id="1_g4dy4"]
+[ext_resource type="AudioStream" uid="uid://b0p087l11oyo1" path="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3" id="2_76f00"]
 
 [node name="GameOverMenu" type="Control"]
 layout_mode = 3
@@ -50,3 +51,6 @@ text = "Title"
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Restart"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_76f00")

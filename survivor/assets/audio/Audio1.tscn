@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds4yd4qpr27j7"]
+
+[ext_resource type="AudioStream" uid="uid://cpj43h3rifslc" path="res://Assets/audio/mixkit-Backround-music-686.mp3" id="1_pr1ey"]
+[ext_resource type="AudioStream" uid="uid://cmdq4tci0jxjv" path="res://Assets/audio/mixkit-sci-fi-laser-in-space-sound-2825.wav" id="2_8cyr3"]
+[ext_resource type="AudioStream" uid="uid://c3ccvilc62now" path="res://Assets/audio/mixkit-projectile-collides-with-enemy-757.wav" id="3_crj2t"]
+[ext_resource type="AudioStream" uid="uid://ddcjrtnm51m5f" path="res://Assets/audio/mixkit-player-takes-damage-2053.wav" id="4_rcmh8"]
+[ext_resource type="AudioStream" uid="uid://c6aj2dem1iske" path="res://Assets/audio/mixkit-player-picks-XP-2043.wav" id="5_clkxc"]
+[ext_resource type="AudioStream" uid="uid://djtmf58gjyyk0" path="res://Assets/audio/mixkit-player-moving-3026.wav" id="6_2e3tj"]
+[ext_resource type="AudioStream" uid="uid://b0p087l11oyo1" path="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3" id="7_tdb6l"]
+
+[node name="Audio" type="Node"]
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_pr1ey")
+
+[node name="sfx_shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8cyr3")
+
+[node name="sfx_hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_crj2t")
+
+[node name="sfx_takedamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rcmh8")
+
+[node name="sfx_xp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_clkxc")
+
+[node name="sfx_move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2e3tj")
+
+[node name="sfx_clickUI" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_tdb6l")
+
+[node name="sfx_UI" type="AudioStreamPlayer" parent="."]

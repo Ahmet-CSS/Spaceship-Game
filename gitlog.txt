@@ -1,0 +1,114 @@
+commit c0aeebb7a6f2d45ab4e2b4c92b51eab778368eef (HEAD - main, originmain, originHEAD)
+Author Carson03 bnv754@usask.ca
+Date   Fri Nov 7 203008 2025 -0600
+
+    Status UI complete, working on last part, Audio
+
+commit c2984f925743a6e1fc393ae47e5d25773f3a5e7f
+Author Carson03 bnv754@usask.ca
+Date   Fri Nov 7 200040 2025 -0600
+
+    Levelling System and upgrade system done, working on showing status now
+
+commit 5251d46db62902c1011d84db7c3a8f9b29ff4ba7
+Author Carson03 bnv754@usask.ca
+Date   Wed Oct 29 025644 2025 -0600
+
+    HP+XP UI complete
+
+commit a1ef96aa49b0ece045e855958df68c128c26ddf0
+Author Ahmed six402@usask.ca
+Date   Tue Oct 28 105521 2025 -0600
+
+    health bar and xp bar done pushing
+
+commit 542daeeba665b9785e3381a2bea54fa47630f366
+Author Ahmed six402@usask.ca
+Date   Tue Oct 28 103222 2025 -0600
+
+    updated UI HP and XP
+
+commit 0fb2919c668bdf627f6cf32c8dea74052d5a2482
+Author Ahmed six402@usask.ca
+Date   Mon Oct 27 235529 2025 -0600
+
+    added base frame or HP and XP UI and script
+
+commit 292ee15c9d1b445748793a8d54d63a45aa48bf11
+Merge 3c9f7fc ee6a83f
+Author Ahmed six402@usask.ca
+Date   Mon Oct 27 112012 2025 -0600
+
+    resolve conflicting files
+
+commit 3c9f7fc35db7adc3b754ace08e8768ced0125808
+Author Ahmed six402@usask.ca
+Date   Mon Oct 27 110025 2025 -0600
+
+    my local edits before pulling
+
+commit ee6a83f7253fecc3da205d1c5fe2860c00a19873
+Author Carson03 bnv754@usask.ca
+Date   Sun Oct 26 125626 2025 -0600
+
+    Align survivor implementation with stated mechanicsUI requirements (player movementtiltshooting, enemy AIattackhealth, XP drop + spawning, game overpausemain menu) and relocate shared config files to project root
+
+commit 6d1b4e524a78a6097140106cc2a6e0098d85e736
+Author Ahmed six402@usask.ca
+Date   Fri Oct 24 215621 2025 -0600
+
+    wrapping up and pushing
+
+commit 25315d63348d38235a84f75576a83eadbdc747ee
+Author Ahmed six402@usask.ca
+Date   Fri Oct 24 213926 2025 -0600
+
+    upadate the script now the player tilts on the direection it moves aslo fixed a bug within laser
+
+commit 4ef83253ed8ca92674ad68440649e0e8f1fdc40a
+Author Ahmed six402@usask.ca
+Date   Fri Oct 24 211810 2025 -0600
+
+    updated scripts for player, level and laser so now the player can take shots and their direction realtive to enemy
+
+commit 2cca904b9027a3e39cd5bb44f67d2606d4decb7b
+Author Ahmed six402@usask.ca
+Date   Fri Oct 24 201555 2025 -0600
+
+    update the scripts now it is fully playable without laser but still needs adjustments
+
+commit 68efc146a8bb0c1ccda605139477090d94a84e64
+Author Ahmed six402@usask.ca
+Date   Fri Oct 24 190801 2025 -0600
+
+    Added initial script for level and enemy also created borders and collisions for frame, player, laser and enemy
+
+commit 6f4019bffaa57f6bfec19d4fb0578e5bd9d73ff6
+Author Ahmed six402@usask.ca
+Date   Fri Oct 24 182957 2025 -0600
+
+    Added a script for player and connected input map
+
+commit 93fbad3a23086c028d0eacfaba6697e5abfe4b0a
+Author Ahmed six402@usask.ca
+Date   Fri Oct 24 121735 2025 -0600
+
+    Created 4 scenes laser player level and enemy added sprite sheets
+
+commit 2f20ece475ffdb9bc87bf536958600ea570563a4
+Author Ahmed six402@usask.ca
+Date   Fri Oct 24 095307 2025 -0600
+
+    committing provided files and checking git
+
+commit 8db3ed4cb2ddf45093032821b14bb35f41decc6c
+Author Ahmed six402@usask.ca
+Date   Tue Oct 21 131315 2025 -0600
+
+    added text.txt
+
+commit 60cdc519deb900d18c86187b5a1fdc01cf9f0168
+Author Ahmet Guldadov (six402) six402@usask.ca
+Date   Wed Oct 1 204146 2025 -0600
+
+    Initial commit

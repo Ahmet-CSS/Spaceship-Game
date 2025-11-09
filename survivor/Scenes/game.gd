@@ -5,6 +5,15 @@ extends Node
 @export var game_over_menu: PackedScene
 @export var levelup_menu: PackedScene
 
+@onready var bgm           := $Audio/bgm
+@onready var sfx_shoot     := $Audio/sfx_shoot
+@onready var sfx_hit       := $Audio/sfx_hit
+@onready var sfx_takedmg   := $Audio/sfx_takedamage
+@onready var sfx_xp        := $Audio/sfx_xp
+@onready var sfx_move      := $Audio/sfx_move
+@onready var sfx_clickUI   := $Audio/sfx_clickUI
+@onready var sfx_ui        := $Audio/sfx_UI
+
 var paused: bool = false
 var player_stats: PlayerStatus = PlayerStatus.new()
 # Game start timestamp
@@ -13,6 +22,7 @@ var start_ms: int = 0
 
 func _ready() -> void:
 	randomize()
+	$Audio/bgm.play()
 	# Store start time
 	start_ms = Time.get_ticks_msec()
 	# Binding player stats and death handler
@@ -24,7 +34,19 @@ func _ready() -> void:
 			u.bind_stats(player_stats)
 	player_stats.level_up_ready.connect(_on_level_up_ready)
 	
+func sfx(name: String) -> void:
+	match name:
+		"shoot":     $Audio/sfx_shoot.play()
+		"hit":       $Audio/sfx_hit.play()
+		"takedmg":   $Audio/sfx_takedamage.play()
+		"xp":        $Audio/sfx_xp.play()
+		"move":      $Audio/sfx_move.play()
+		"click":     $Audio/sfx_clickUI.play()
+		"ui":        $Audio/sfx_UI.play()
+		
+	
 func _on_level_up_ready(options: Array) -> void:
+	sfx("ui_open")
 	print("[LVL-UP] received options: ", options)
 	if levelup_menu == null: return
 	var m = levelup_menu.instantiate()
@@ -44,6 +66,7 @@ func _on_player_died() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("pause") and !paused:
+		sfx("ui")
 		Engine.time_scale = 0.0 #This pauses time. Essentially this multiplies delta by 0 for everything every frame. By default it is 1. 
 		var pause_menu_inst = pause_menu.instantiate() #Makes an instance of the pause menu
 		pause_menu_inst.resume.connect(resume)  #Connects to the pause menus unpause signal so the pause menu can let us know when it dies
@@ -51,5 +74,6 @@ func _input(event: InputEvent) -> void:
 		self.add_child(pause_menu_inst) #Adds the pause menu to the scene tree
 		
 func resume() -> void:
+	sfx("ui")
 	Engine.time_scale = 1.0 #Starts time again
 	paused = false #Tracks the game is unpaused

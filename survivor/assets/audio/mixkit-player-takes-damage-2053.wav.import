@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://klcwcu60tprn"
-path="res://.godot/imported/mixkit-player-takes-damage-2053.wav-7b4e1602f810fa21ef6aa28d99651050.sample"
+path="res://.godot/imported/mixkit-player-takes-damage-2053.wav-038958e73748a89f604ef3bd11f2b66f.sample"
 
 [deps]
 
-source_file="res://assets/audio/mixkit-player-takes-damage-2053.wav"
-dest_files=["res://.godot/imported/mixkit-player-takes-damage-2053.wav-7b4e1602f810fa21ef6aa28d99651050.sample"]
+source_file="res://Assets/audio/mixkit-player-takes-damage-2053.wav"
+dest_files=["res://.godot/imported/mixkit-player-takes-damage-2053.wav-038958e73748a89f604ef3bd11f2b66f.sample"]
 
 [params]
 

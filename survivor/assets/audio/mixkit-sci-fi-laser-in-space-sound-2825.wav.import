@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b0fv8jsfn3n7r"
-path="res://.godot/imported/mixkit-sci-fi-laser-in-space-sound-2825.wav-d62c8c8532b0e3f258271287a3dadc64.sample"
+path="res://.godot/imported/mixkit-sci-fi-laser-in-space-sound-2825.wav-a69dea5a9a4e549d31bae45088b2128b.sample"
 
 [deps]
 
-source_file="res://assets/audio/mixkit-sci-fi-laser-in-space-sound-2825.wav"
-dest_files=["res://.godot/imported/mixkit-sci-fi-laser-in-space-sound-2825.wav-d62c8c8532b0e3f258271287a3dadc64.sample"]
+source_file="res://Assets/audio/mixkit-sci-fi-laser-in-space-sound-2825.wav"
+dest_files=["res://.godot/imported/mixkit-sci-fi-laser-in-space-sound-2825.wav-a69dea5a9a4e549d31bae45088b2128b.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dok2a65hx0mym"
-path="res://.godot/imported/mixkit-Opening-closing-menu-221.wav-7116f47ec39f17e609661b9d6152c3ea.sample"
+path="res://.godot/imported/mixkit-Opening-closing-menu-221.wav-a135530fb7cd5a4c9d05c600ea25ea84.sample"
 
 [deps]
 
-source_file="res://assets/audio/mixkit-Opening-closing-menu-221.wav"
-dest_files=["res://.godot/imported/mixkit-Opening-closing-menu-221.wav-7116f47ec39f17e609661b9d6152c3ea.sample"]
+source_file="res://Assets/audio/mixkit-Opening-closing-menu-221.wav"
+dest_files=["res://.godot/imported/mixkit-Opening-closing-menu-221.wav-a135530fb7cd5a4c9d05c600ea25ea84.sample"]
 
 [params]
 

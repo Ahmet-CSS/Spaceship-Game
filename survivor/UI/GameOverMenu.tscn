@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://4r8x2508f57f"]
 
 [ext_resource type="Script" uid="uid://c6tajk0cdttgs" path="res://UI/game_over_menu.gd" id="1_g4dy4"]
-[ext_resource type="AudioStream" uid="uid://b0p087l11oyo1" path="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3" id="2_76f00"]
+[ext_resource type="AudioStream" uid="uid://bgane7ypxo7iq" path="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3" id="2_76f00"]
 
 [node name="GameOverMenu" type="Control"]
 layout_mode = 3
@@ -14,10 +14,10 @@ script = ExtResource("1_g4dy4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -50.0
-offset_top = -23.0
-offset_right = 1217.0
-offset_bottom = 685.0
+offset_left = -92.0
+offset_top = -56.0
+offset_right = 1365.0
+offset_bottom = 753.0
 color = Color(0, 0, 0, 0.376471)
 
 [node name="Label" type="Label" parent="."]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cmp0kwwg0sx3q"
-path="res://.godot/imported/mixkit-projectile-collides-with-enemy-757.wav-564dc28bb40dc919992eec3cfa174a06.sample"
+path="res://.godot/imported/mixkit-projectile-collides-with-enemy-757.wav-11431c443e4a8d99ea14c00a75a4cb48.sample"
 
 [deps]
 
-source_file="res://assets/audio/mixkit-projectile-collides-with-enemy-757.wav"
-dest_files=["res://.godot/imported/mixkit-projectile-collides-with-enemy-757.wav-564dc28bb40dc919992eec3cfa174a06.sample"]
+source_file="res://Assets/audio/mixkit-projectile-collides-with-enemy-757.wav"
+dest_files=["res://.godot/imported/mixkit-projectile-collides-with-enemy-757.wav-11431c443e4a8d99ea14c00a75a4cb48.sample"]
 
 [params]
 

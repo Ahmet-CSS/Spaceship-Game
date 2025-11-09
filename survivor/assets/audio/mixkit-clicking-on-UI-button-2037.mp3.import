@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bgane7ypxo7iq"
-path="res://.godot/imported/mixkit-clicking-on-UI-button-2037.mp3-855ad539e361509f3a47c3acac40d343.mp3str"
+path="res://.godot/imported/mixkit-clicking-on-UI-button-2037.mp3-e527342146f8d9309e31812f4a3ee8f2.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/mixkit-clicking-on-UI-button-2037.mp3"
-dest_files=["res://.godot/imported/mixkit-clicking-on-UI-button-2037.mp3-855ad539e361509f3a47c3acac40d343.mp3str"]
+source_file="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3"
+dest_files=["res://.godot/imported/mixkit-clicking-on-UI-button-2037.mp3-e527342146f8d9309e31812f4a3ee8f2.mp3str"]
 
 [params]
 

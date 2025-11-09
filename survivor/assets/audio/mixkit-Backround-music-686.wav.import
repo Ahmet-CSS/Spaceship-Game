@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d0bbndm4251o4"
-path="res://.godot/imported/mixkit-Backround-music-686.wav-36dbfb1b4a5275ab951d8b982712c020.sample"
+path="res://.godot/imported/mixkit-Backround-music-686.wav-182737daed64ef10679d83afcfb300a6.sample"
 
 [deps]
 
-source_file="res://assets/audio/mixkit-Backround-music-686.wav"
-dest_files=["res://.godot/imported/mixkit-Backround-music-686.wav-36dbfb1b4a5275ab951d8b982712c020.sample"]
+source_file="res://Assets/audio/mixkit-Backround-music-686.wav"
+dest_files=["res://.godot/imported/mixkit-Backround-music-686.wav-182737daed64ef10679d83afcfb300a6.sample"]
 
 [params]
 

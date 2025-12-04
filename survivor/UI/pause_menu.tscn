@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dp3pan2ri4doa"]
 
 [ext_resource type="Script" uid="uid://crfx33fovy38l" path="res://UI/pause_menu.gd" id="1_ltd3m"]
-[ext_resource type="AudioStream" uid="uid://b0p087l11oyo1" path="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3" id="2_jfm1e"]
+[ext_resource type="AudioStream" uid="uid://bgane7ypxo7iq" path="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3" id="2_jfm1e"]
 
-[node name="PauseMenu" type="Control"]
+[node name="PauseMenu" type="Control" groups=["ui"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 431.0
+offset_top = 224.0
+offset_right = -434.0
+offset_bottom = -214.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.345098)
@@ -42,6 +46,9 @@ text = "Resume"
 [node name="Exit" type="Button" parent="Container"]
 layout_mode = 2
 text = "Exit To Main Menu"
+
+[node name="StatsLabel" type="Label" parent="Container"]
+layout_mode = 2
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jfm1e")

@@ -5,6 +5,40 @@ signal resume
 
 var main_menu: PackedScene = load("res://Scenes/title_screen.tscn")
 
+
+@onready var vbox: VBoxContainer = $Container         # NEW
+@onready var stats_label: Label = $Container/StatsLabel  # NEW
+
+var stats: PlayerStatus = null                            # NEW
+
+
+
+
+
+func bind_stats(s: PlayerStatus) -> void:                 # NEW
+	stats = s
+	stats.stats_changed.connect(_update_stats)
+	_update_stats()
+
+
+func _update_stats() -> void:
+	if stats == null or stats_label == null:          # NEW
+		return                            # NEW
+	var lines := []
+	lines.append("Health: %d / %d" % [stats.hp, stats.max_hp])
+	lines.append("XP: %d / %d" % [stats.xp_in_level(), stats.xp_to_next])
+	lines.append("Level: %d" % stats.level())
+	lines.append("")
+	lines.append("Bullet Speed x%.2f" % stats.bullet_speed_mul)
+	lines.append("Damage +%d" % stats.damage_plus)
+	lines.append("Move Speed x%.2f" % stats.move_speed_mul)
+
+	stats_label.text = "\n".join(lines)
+
+# -------------------
+
+
+
 func _play_click_global() -> void:
 	var p := AudioStreamPlayer.new()
 	p.bus = "SFX"

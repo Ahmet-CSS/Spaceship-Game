@@ -14,6 +14,9 @@ extends Node
 @onready var sfx_clickUI   := $Audio/sfx_clickUI
 @onready var sfx_ui        := $Audio/sfx_UI
 
+
+@onready var pause_button: Button = $PauseButton   # NEW
+
 var paused: bool = false
 var player_stats: PlayerStatus = PlayerStatus.new()
 # Game start timestamp
@@ -29,10 +32,32 @@ func _ready() -> void:
 	$Player.stats = player_stats
 	$Player.died.connect(_on_player_died)
 	
+	
 	for u in get_tree().get_nodes_in_group("ui"):
 		if "bind_stats" in u:
 			u.bind_stats(player_stats)
 	player_stats.level_up_ready.connect(_on_level_up_ready)
+	pause_button.pressed.connect(_on_pause_button_pressed)  # NEW
+
+
+func _show_pause_menu() -> void:                            # CHANGED
+	if paused:                                              # NEW
+		return                                               # NEW
+
+	sfx("ui")                                               # NEW
+	Engine.time_scale = 0.0                                 # NEW
+
+	var pause_menu_inst = pause_menu.instantiate() as PauseMenu  # CHANGED
+
+	add_child(pause_menu_inst)                              # NEW (moved earlier so @onready vars are valid)
+	pause_menu_inst.resume.connect(resume)                  # NEW
+	pause_menu_inst.bind_stats(player_stats)                # NEW
+
+	paused = true                                           # NEW
+	
+	
+func _on_pause_button_pressed() -> void:            # NEW
+	_show_pause_menu()                               # NEW
 	
 func sfx(name: String) -> void:
 	match name:
@@ -66,10 +91,15 @@ func _on_player_died() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("pause") and !paused:
+		
+		_show_pause_menu()                           # NEW
 		sfx("ui")
 		Engine.time_scale = 0.0 #This pauses time. Essentially this multiplies delta by 0 for everything every frame. By default it is 1. 
-		var pause_menu_inst = pause_menu.instantiate() #Makes an instance of the pause menu
+		var pause_menu_inst = pause_menu.instandwstiate() as PauseMenu #Makes an instance of the pause menu
 		pause_menu_inst.resume.connect(resume)  #Connects to the pause menus unpause signal so the pause menu can let us know when it dies
+		
+		pause_menu_inst.bind_stats(player_stats) # new
+
 		paused = true #Tracks that the game is paused so we can't repause the game
 		self.add_child(pause_menu_inst) #Adds the pause menu to the scene tree
 		

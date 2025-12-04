@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dduc54np40l3g"]
+[gd_scene load_steps=12 format=3 uid="uid://dduc54np40l3g"]
 
 [ext_resource type="Script" uid="uid://xy6n6m434n3y" path="res://Scenes/game.gd" id="1_5diyh"]
 [ext_resource type="PackedScene" uid="uid://bq2fxemi6ggwn" path="res://Player/player.tscn" id="2_e6lhs"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dh460ufxe77f8" path="res://Assets/SpaceAliens/backround.png" id="4_i6g32"]
 [ext_resource type="PackedScene" uid="uid://bgjhfbd64fbc1" path="res://Enemy/EnemySpawner.tscn" id="4_qcbus"]
 [ext_resource type="PackedScene" uid="uid://4gr0umo4ekb3" path="res://UI/hpxp_ui.tscn" id="7_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://dymjjsb1f2j8m" path="res://Assets/SpaceAliens/Screenshot 2025-12-04 at 13.20.30.png" id="8_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://c7kuvbfw07o3a" path="res://UI/detail_status_ui.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://ykj2e76v6qrt" path="res://Assets/audio/Audio.tscn" id="10_ldgsr"]
 
@@ -31,8 +32,19 @@ enemy_container = NodePath("../EnemyContainer")
 
 [node name="EnemyContainer" type="Node2D" parent="."]
 
+[node name="PauseButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_bottom = 65.0
+grow_horizontal = 0
+icon = ExtResource("8_o5yvi")
+
 [node name="HPXP_UI" parent="." instance=ExtResource("7_1l0tm")]
 
 [node name="DetailStatus_UI" parent="." instance=ExtResource("8_v158k")]
 
 [node name="Audio" parent="." instance=ExtResource("10_ldgsr")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_i6g32")]

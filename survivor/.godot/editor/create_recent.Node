@@ -1,9 +1,9 @@
+Button
+Label
 AudioStreamPlayer
 Node
 Node2D
-Label
 VBoxContainer
-Button
 TextureRect
 TextureProgressBar
 Panel

@@ -5,6 +5,7 @@ extends Node
 @export var pause_menu: PackedScene
 @export var game_over_menu: PackedScene
 @export var levelup_menu: PackedScene
+@export var victory_menu: PackedScene
 
 @onready var bgm           := $Audio/bgm
 @onready var sfx_shoot     := $Audio/sfx_shoot
@@ -17,7 +18,7 @@ extends Node
 @onready var hud_hpxp      := $HPXP_UI
 @onready var detail_status := $DetailStatus_UI
 
-enum GameState { PLAYING, PAUSED, LEVELUP, GAME_OVER }
+enum GameState { PLAYING, PAUSED, LEVELUP, GAME_OVER, VICTORY}
 var state: GameState = GameState.PLAYING
 
 var paused: bool = false
@@ -45,6 +46,13 @@ func _ready() -> void:
 			u.bind_stats(player_stats)
 	player_stats.level_up_ready.connect(_on_level_up_ready)
 	
+	#_show_victory_debug()
+
+#func _show_victory_debug() -> void:
+#	if victory_menu:
+#		var m = victory_menu.instantiate()
+#		add_child(m)
+	
 func _process(delta: float) -> void:
 	if state == GameState.PLAYING:
 		elapsed_time += delta
@@ -52,6 +60,8 @@ func _process(delta: float) -> void:
 			hud_hpxp.set_time(elapsed_time)
 		if player_stats:
 			player_stats.update(delta)
+		if elapsed_time >= 300.0:
+			_on_victory()
 
 func sfx(kind: String) -> void:
 	match kind:
@@ -88,6 +98,8 @@ func _on_level_up_ready(options: Array) -> void:
 	)
 	
 func _on_player_died() -> void:
+	if state != GameState.PLAYING:
+		return
 	# Freeze time and show game-over menu
 	state = GameState.GAME_OVER
 	Engine.time_scale = 0.0
@@ -95,6 +107,15 @@ func _on_player_died() -> void:
 		detail_status.visible = false
 	if game_over_menu:
 		var m = game_over_menu.instantiate()
+		add_child(m)
+		
+func _on_victory() -> void:
+	state = GameState.VICTORY
+	Engine.time_scale = 0.0
+	if detail_status:
+		detail_status.visible = false
+	if victory_menu:
+		var m = victory_menu.instantiate()
 		add_child(m)
 
 func _input(event: InputEvent) -> void:

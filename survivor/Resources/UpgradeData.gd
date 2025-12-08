@@ -8,7 +8,6 @@ const NEUTRAL_KEYS = ["move_speed"]
 
 const UPGRADE_KEYS: Array[String] = SHOOTER_KEYS + THORNS_KEYS + NEUTRAL_KEYS
 
-# 这里的数字要和 PlayerStatus 里的常量保持一致
 const MAX_REGEN_PER_SEC: float = 4.0
 const MAX_MOVE_SPEED: float = 130.0
 const MAX_THORNS: int = 4
@@ -23,7 +22,6 @@ func _is_key_effective(stats: PlayerStatus, key: String) -> bool:
 		"move_speed":
 			return stats.base_speed < MAX_MOVE_SPEED
 		_:
-			# 子弹速度、伤害、血量这些目前都没有上限，永远有效
 			return true
 
 
@@ -41,7 +39,6 @@ func _random_effective_from_pool(stats: PlayerStatus, pool: Array, exclude: Arra
 		if not exclude.has(k) and _is_key_effective(stats, k):
 			candidates.append(k)
 	if candidates.is_empty():
-		# 实在没货，只能退回“随便给一个”
 		return _random_key_from_pool(pool, exclude)
 	return candidates[randi() % candidates.size()]
 
@@ -50,7 +47,6 @@ func roll_options(stats: PlayerStatus) -> Array:
 	var arch: String = stats.get_archetype()
 	var count: int = stats.get_upgrade_count()
 
-	# ---------- 第 1、2 次升级：强制一射击一反伤 ----------
 	if arch == "" and count < 2:
 		var shooter_pool = _effective_keys(stats, SHOOTER_KEYS)
 		if shooter_pool.is_empty():
@@ -67,12 +63,10 @@ func roll_options(stats: PlayerStatus) -> Array:
 			opts.reverse()
 		return opts
 
-	# ---------- 射击流：第 3 次一定给一次移速（但必须还有效） ----------
 	if arch == "shooter" and count == 2 and stats.move_speed_upgrades == 0 and _is_key_effective(stats, "move_speed"):
 		var other_key: String = _random_effective_from_pool(stats, UPGRADE_KEYS, ["move_speed"])
 		return [build_opt("move_speed"), build_opt(other_key)]
 
-	# ---------- 反伤流：第 3 次保证回血 / 反伤核心技能（前提是还没点过而且有效） ----------
 	if arch == "thorns":
 		var need_regen: bool = stats.regen_upgrades == 0 and _is_key_effective(stats, "regen")
 		var need_thorns: bool = stats.thorns_upgrades == 0 and _is_key_effective(stats, "thorns")
@@ -91,7 +85,6 @@ func roll_options(stats: PlayerStatus) -> Array:
 				var other2: String = _random_effective_from_pool(stats, UPGRADE_KEYS, ["thorns"])
 				return [build_opt("thorns"), build_opt(other2)]
 
-	# ---------- 后期：根据强弱给当前流派 / 另一流派，并混入移速 + 过滤无效 ----------
 	var prefer_other: bool = stats.is_ahead_of_curve()
 
 	var pool: Array = []
@@ -108,7 +101,6 @@ func roll_options(stats: PlayerStatus) -> Array:
 	else:
 		pool = UPGRADE_KEYS.duplicate()
 
-	# 无论是什么流派，都把中立技能（比如移速）混进去
 	for k in NEUTRAL_KEYS:
 		if not pool.has(k):
 			pool.append(k)

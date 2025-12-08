@@ -3,14 +3,14 @@
 export_presets.cfg::TextFile::-1::1762661695::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::2004587108617349071::1761670521::1761670521::1::::<><><>0<>0<>ed1a217467f5be7e2ea1bf7b423298be<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Assets/::1765156997
-::res://Assets/audio/::1765170440
+::res://Assets/audio/::1765171630
 Audio.tscn::PackedScene::1705770955188645949::1765156997::0::1::::<><><>0<>0<><>::uid://cpj43h3rifslc::::res://Assets/audio/mixkit-Backround-music-686.mp3<>uid://b0fv8jsfn3n7r::::res://Assets/audio/mixkit-sci-fi-laser-in-space-sound-2825.wav<>uid://cmp0kwwg0sx3q::::res://Assets/audio/mixkit-projectile-collides-with-enemy-757.wav<>uid://klcwcu60tprn::::res://Assets/audio/mixkit-player-takes-damage-2053.wav<>uid://bqwy1y1cvsby5::::res://Assets/audio/mixkit-player-picks-XP-2043.wav<>uid://s50xljuo20k3::::res://Assets/audio/mixkit-player-moving-3026.wav<>uid://bgane7ypxo7iq::::res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3<>uid://bta7sxyn2iore::::res://Assets/audio/mixkit-Opening-closing-menu-221.mp3
 License.txt::TextFile::-1::1762649162::0::1::::<><><>0<>0<><>::
 mixkit-Backround-music-686.mp3::AudioStreamMP3::5846064628464075656::1762660602::1762660602::1::::<><><>0<>0<>84b7c434950146c8085c2b6802f4b55e<>res://.godot/imported/mixkit-Backround-music-686.mp3-e3738693d3c9484c5c36201f3d93ea78.mp3str::
-mixkit-Backround-music-686.wav::AudioStreamWAV::8916131629560324129::1762660602::1765170468::1::::<><><>0<>0<>3497ea8ca8a1e8c45fab5464860f3b63<>res://.godot/imported/mixkit-Backround-music-686.wav-182737daed64ef10679d83afcfb300a6.sample::
+mixkit-Backround-music-686.wav::AudioStreamWAV::8916131629560324129::1762660602::1765171631::1::::<><><>0<>0<>3497ea8ca8a1e8c45fab5464860f3b63<>res://.godot/imported/mixkit-Backround-music-686.wav-182737daed64ef10679d83afcfb300a6.sample::
 mixkit-clicking-on-UI-button-2037.mp3::AudioStreamMP3::2808351928138244192::1762649162::1762661659::1::::<><><>0<>0<>29bd5bfecf67a8f96e43341016d8749d<>res://.godot/imported/mixkit-clicking-on-UI-button-2037.mp3-e527342146f8d9309e31812f4a3ee8f2.mp3str::
 mixkit-Opening-closing-menu-221.mp3::AudioStreamMP3::3721985046613963406::1762660602::1762660602::1::::<><><>0<>0<>fd466aaddb33d57b989c863db7956f6b<>res://.godot/imported/mixkit-Opening-closing-menu-221.mp3-6660fbcfd31493ac0c57703df94c71f1.mp3str::
-mixkit-Opening-closing-menu-221.wav::AudioStreamWAV::8164190673274816772::1762660602::1765170468::1::::<><><>0<>0<>e2add94eedf35eb6618620caccf84f0a<>res://.godot/imported/mixkit-Opening-closing-menu-221.wav-a135530fb7cd5a4c9d05c600ea25ea84.sample::
+mixkit-Opening-closing-menu-221.wav::AudioStreamWAV::8164190673274816772::1762660602::1765171631::1::::<><><>0<>0<>e2add94eedf35eb6618620caccf84f0a<>res://.godot/imported/mixkit-Opening-closing-menu-221.wav-a135530fb7cd5a4c9d05c600ea25ea84.sample::
 mixkit-player-moving-3026.wav::AudioStreamWAV::1326890108773949388::1762649162::1762661659::1::::<><><>0<>0<>ac16600544ae9c96c91df7b29ee8a9e1<>res://.godot/imported/mixkit-player-moving-3026.wav-06944ed5c6d7dc64dd1a1545056db08c.sample::
 mixkit-player-picks-XP-2043.wav::AudioStreamWAV::3556363431803818354::1762649162::1762661659::1::::<><><>0<>0<>d3d651988072282157d6e162a1140bb5<>res://.godot/imported/mixkit-player-picks-XP-2043.wav-d790856dd553f785efc78f802a54adcd.sample::
 mixkit-player-takes-damage-2053.wav::AudioStreamWAV::724757450511881875::1762649162::1762661659::1::::<><><>0<>0<>a9bc2be036dd0ac54767decf8bad87c7<>res://.godot/imported/mixkit-player-takes-damage-2053.wav-038958e73748a89f604ef3bd11f2b66f.sample::
@@ -41,16 +41,16 @@ bullet.gd::GDScript::19162254315917122::1765156997::0::1::::<>Area2D<><>0<>0<><>
 Bullet.tscn::PackedScene::7054983058630674956::1761670521::0::1::::<><><>0<>0<><>::uid://cwyq4870c0ne6::::res://assets/SpaceAliens/laserGreen3.png<>uid://jjunb5dykfa::::res://Player/bullet.gd
 player.gd::GDScript::4207644926301464506::1765165682::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::3565525268521084977::1761722993::0::1::::<><><>0<>0<><>::uid://b07hkds215ol3::::res://Player/player.gd<>uid://bff6mjtwo3h27::::res://SpaceAliens/shipYellow_manned.png<>uid://c7rqsmrgorcim::::res://Player/Bullet.tscn
-::res://Resources/::1765170414
+::res://Resources/::1765170607
 new_resource.tres::Resource/Wallet::9072249618834334901::1761670521::0::1::::<><><>0<>0<><>::uid://bpbh8u04f2asa::::res://Resources/wallet.gd
 PlayerStats.gd::GDScript::1756224720586029719::1765170414::0::1::::PlayerStatus<>Node<><>0<>0<><>::
-UpgradeData.gd::GDScript::1802412687740656824::1765170414::0::1::::UpgradeData<>RefCounted<><>0<>0<><>::
+UpgradeData.gd::GDScript::1802412687740656824::1765170607::0::1::::UpgradeData<>RefCounted<><>0<>0<><>::
 XP.tscn::PackedScene::5397247567915195279::1761670521::0::1::::<><><>0<>0<><>::res://Resources/xp_circle.tres<>uid://c6j2oebgd5lqc::::res://Resources/XPPickup.gd
 XPPickup.gd::GDScript::6968939491787125998::1765156997::0::1::::XPPickup<>Area2D<><>0<>0<><>::
 xp_circle.tres::ImageTexture::-1::1761670521::0::1::::<><><>0<>0<><>::
-::res://Scenes/::1765158751
-game.gd::GDScript::1665795559986411468::1765158751::0::1::::<>Node<><>0<>0<><>::
-game.tscn::PackedScene::7411292688858168610::1765158500::0::1::::<><><>0<>0<><>::uid://xy6n6m434n3y::::res://Scenes/game.gd<>uid://bq2fxemi6ggwn::::res://Player/player.tscn<>uid://dp3pan2ri4doa::::res://UI/pause_menu.tscn<>uid://4r8x2508f57f::::res://UI/GameOverMenu.tscn<>uid://ugpblaluoyhb::::res://UI/LevelUpMenu.tscn<>uid://dh460ufxe77f8::::res://Assets/SpaceAliens/backround.png<>uid://bgjhfbd64fbc1::::res://Enemy/EnemySpawner.tscn<>uid://4gr0umo4ekb3::::res://UI/hpxp_ui.tscn<>uid://dymjjsb1f2j8m::::res://Assets/SpaceAliens/Screenshot 2025-12-04 at 13.20.30.png<>uid://c7kuvbfw07o3a::::res://UI/detail_status_ui.tscn<>uid://ykj2e76v6qrt::::res://Assets/audio/Audio.tscn
+::res://Scenes/::1765171627
+game.gd::GDScript::1665795559986411468::1765171627::0::1::::<>Node<><>0<>0<><>::
+game.tscn::PackedScene::7411292688858168610::1765171159::0::1::::<><><>0<>0<><>::uid://xy6n6m434n3y::::res://Scenes/game.gd<>uid://bq2fxemi6ggwn::::res://Player/player.tscn<>uid://dp3pan2ri4doa::::res://UI/pause_menu.tscn<>uid://4r8x2508f57f::::res://UI/GameOverMenu.tscn<>uid://ugpblaluoyhb::::res://UI/LevelUpMenu.tscn<>uid://dh460ufxe77f8::::res://Assets/SpaceAliens/backround.png<>uid://bgjhfbd64fbc1::::res://Enemy/EnemySpawner.tscn<>uid://bo7efjjjyaomc::::res://UI/VictoryMenu.tscn<>uid://4gr0umo4ekb3::::res://UI/hpxp_ui.tscn<>uid://c7kuvbfw07o3a::::res://UI/detail_status_ui.tscn<>uid://ykj2e76v6qrt::::res://Assets/audio/Audio.tscn
 title_screen.gd::GDScript::8203694060066883881::1765156997::0::1::::<>Control<><>0<>0<><>::
 title_screen.tscn::PackedScene::3591462439826479265::1765156997::0::1::::<><><>0<>0<><>::uid://do46v33skcug4::::res://Scenes/title_screen.gd<>uid://cpj43h3rifslc::::res://Assets/audio/mixkit-Backround-music-686.mp3<>uid://bgane7ypxo7iq::::res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3
 ::res://scripts/::1765157334
@@ -62,7 +62,7 @@ laserGreen3.png::CompressedTexture2D::6367566037271706723::1761321187::176132118
 License.txt::TextFile::-1::1761321187::0::1::::<><><>0<>0<><>::
 shipGreen_manned.png::CompressedTexture2D::3258577254704609431::1761321187::1761321187::1::::<><><>0<>0<>eeb5f291eac07d75f13914c8c18bd46f<>res://.godot/imported/shipGreen_manned.png-05c42110fa2b5099b23a8a91d86f3157.ctex::
 shipYellow_manned.png::CompressedTexture2D::2749590950037013778::1761321187::1761321187::1::::<><><>0<>0<>f774b05111903d42177b9b014632349f<>res://.godot/imported/shipYellow_manned.png-aab3ea957967d3ca26e354d511b0a4f4.ctex::
-::res://UI/::1765165682
+::res://UI/::1765171459
 detail_status_ui.gd::GDScript::337988265621354671::1765165682::0::1::::<>CanvasLayer<><>0<>0<><>::
 detail_status_ui.tscn::PackedScene::7040780044152803072::1762567902::0::1::::<><><>0<>0<><>::uid://cmpivbiiqxwxo::::res://UI/status_panel.tres<>uid://e2yu8wqqngff::::res://UI/detail_status_ui.gd
 empty.tres::AtlasTexture::2796809572647962174::1761670521::0::1::::<><><>0<>0<><>::uid://bpashs41saun8::::res://assets/UIPack-SciFi/uipackSpace_sheet.png
@@ -76,6 +76,7 @@ LevelUpMenu.tscn::PackedScene::1417076258254354399::1762566475::0::1::::<><><>0<
 level_up_menu.gd::GDScript::7227720558117127476::1765156997::0::1::::<>CanvasLayer<><>0<>0<><>::
 pause_menu.gd::GDScript::5977821570108979181::1765157333::0::1::::PauseMenu<>Control<><>0<>0<><>::
 pause_menu.tscn::PackedScene::8270808762952467376::1765158500::0::1::::<><><>0<>0<><>::uid://crfx33fovy38l::::res://UI/pause_menu.gd<>uid://bgane7ypxo7iq::::res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3
+VictoryMenu.tscn::PackedScene::3435376866750456114::1765171459::0::1::::<><><>0<>0<><>::uid://c6tajk0cdttgs::::res://UI/game_over_menu.gd<>uid://bgane7ypxo7iq::::res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3
 status_panel.tres::AtlasTexture::5646596460235202348::1761725047::0::1::::<><><>0<>0<><>::uid://bpashs41saun8::::res://assets/UIPack-SciFi/uipackSpace_sheet.png
 under.tres::AtlasTexture::7520286531602861806::1761670521::0::1::::<><><>0<>0<><>::uid://bpashs41saun8::::res://assets/UIPack-SciFi/uipackSpace_sheet.png
 xp_fill.tres::AtlasTexture::5027624646049027069::1761720239::0::1::::<><><>0<>0<><>::uid://bpashs41saun8::::res://UIPack-SciFi/uipackSpace_sheet.png

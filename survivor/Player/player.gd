@@ -101,7 +101,11 @@ func _physics_process(_delta:float) -> void:
 		else:
 			dir = _random_dir()
 		_shoot(dir, target)
-		_fire_cooldown = fire_interval
+		var interval := fire_interval
+		if stats != null:
+			interval = fire_interval / stats.fire_rate_mul
+		_fire_cooldown = interval
+
 		
 	# Tilting
 	var tilt_target := 0.0

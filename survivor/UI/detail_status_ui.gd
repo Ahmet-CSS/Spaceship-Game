@@ -25,5 +25,8 @@ func _refresh() -> void:
 
 	var move_speed: float = stats.base_speed * stats.move_speed_mul
 	lines.append("Movement Speed: %.1f" % move_speed)
-
+	
+	lines.append("Fire Rate Multiplier: %.2f" % stats.fire_rate_mul)
+	lines.append("HP Regen: %.1f / s" % stats.hp_regen_per_sec)
+	
 	body.text = "\n".join(lines)

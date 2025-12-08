@@ -15,6 +15,9 @@ var base_bullet_damage: int = 1
 var bullet_speed_mul: float = 1.0
 var move_speed_mul: float = 1.0
 var damage_plus: int = 0
+var fire_rate_mul: float = 1.0
+var hp_regen_per_sec: float = 0.0
+var _regen_accum: float = 0.0
 
 @export var xp_base: int = 5
 @export var xp_growth: float = 1.25
@@ -77,6 +80,21 @@ func take_damage(amount: int) -> void:
 	#print("[HP] now =", hp)
 	emit_signal("stats_changed")
 	
+func update(delta: float) -> void:
+	if hp_regen_per_sec <= 0.0:
+		return
+	if hp >= max_hp:
+		return
+
+	_regen_accum += hp_regen_per_sec * delta
+	if _regen_accum >= 1.0:
+		var gain := int(_regen_accum)
+		_regen_accum -= gain
+		var new_hp: int = min(max_hp, hp + gain)
+		if new_hp != hp:
+			hp = new_hp
+			emit_signal("stats_changed")
+	
 func apply_upgrade(key: String) -> void:
 	match key:
 		"bullet_speed":
@@ -88,4 +106,8 @@ func apply_upgrade(key: String) -> void:
 		"max_hp":
 			max_hp += 10
 			hp = min(hp + 10, max_hp)
+		"fire_rate":
+			fire_rate_mul *= 1.20
+		"regen":
+			hp_regen_per_sec += 1.0
 	emit_signal("stats_changed")

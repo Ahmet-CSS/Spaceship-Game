@@ -50,6 +50,8 @@ func _process(delta: float) -> void:
 		elapsed_time += delta
 		if hud_hpxp and "set_time" in hud_hpxp:
 			hud_hpxp.set_time(elapsed_time)
+		if player_stats:
+			player_stats.update(delta)
 
 func sfx(kind: String) -> void:
 	match kind:

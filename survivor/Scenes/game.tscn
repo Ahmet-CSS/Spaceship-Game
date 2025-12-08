@@ -20,8 +20,8 @@ levelup_menu = ExtResource("4_h4fw4")
 victory_menu = ExtResource("5_o5yvi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(627, 120)
-scale = Vector2(1.42188, 1.16406)
+position = Vector2(641, 359.99997)
+scale = Vector2(1.271974, 0.71386653)
 texture = ExtResource("4_i6g32")
 
 [node name="Player" parent="." instance=ExtResource("2_e6lhs")]

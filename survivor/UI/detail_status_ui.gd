@@ -1,10 +1,18 @@
-#detail_status_ui.gd
 extends CanvasLayer
+## Overlay UI that displays detailed player statistics.[br]
+## Binds to a PlayerStatus and refreshes the text whenever the
+## stats change.
 
+## Label used to show the multi-line status text.
 @onready var body: Label = $"NinePatchRect/StatusTitle/Status"
 
+## Reference to the currently bound PlayerStatus object.
 var stats: PlayerStatus
 
+
+## Binds this UI to the given PlayerStatus instance.[br]
+## Disconnects from any previous stats object, connects to the new
+## stats_changed signal, and forces an immediate refresh.
 func bind_stats(s: PlayerStatus) -> void:
 	if stats and stats.stats_changed.is_connected(_refresh):
 		stats.stats_changed.disconnect(_refresh)
@@ -12,6 +20,9 @@ func bind_stats(s: PlayerStatus) -> void:
 	stats.stats_changed.connect(_refresh)
 	_refresh()
 
+
+## Rebuilds the status text from the current PlayerStatus values.[br]
+## If no stats object is bound, the function returns without changes.
 func _refresh() -> void:
 	if stats == null:
 		return

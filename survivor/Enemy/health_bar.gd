@@ -1,6 +1,10 @@
 #health_baar.gd
+## Simple health bar node drawn above an enemy.[br]
+## Reads the parent Enemy's current and maximum health and
+## renders a colored bar representing the remaining health.
 extends Node2D
 
+## Draws the health bar each frame using the parent's health values.
 func _draw() -> void:
 	var enemy := get_parent() as Enemy
 	if enemy == null or enemy.max_health <= 0:

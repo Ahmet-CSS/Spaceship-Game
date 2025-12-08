@@ -1,18 +1,28 @@
 #UpgradeData.gd
+## Helper for building and rolling upgrade options.[br]
+## Encapsulates archetype rules, effectiveness checks and late-game bias.
 extends RefCounted
 class_name UpgradeData
 
+## Keys for shooter-style offensive upgrades.
 const SHOOTER_KEYS = ["bullet_speed", "damage"]
+## Keys for thorns-style defensive / reflection upgrades.
 const THORNS_KEYS  = ["max_hp", "regen", "thorns"]
+## Keys for neutral upgrades usable by all archetypes.
 const NEUTRAL_KEYS = ["move_speed"]
 
+## Full list of all possible upgrade keys.
 const UPGRADE_KEYS: Array[String] = SHOOTER_KEYS + THORNS_KEYS + NEUTRAL_KEYS
 
+## Regeneration cap, must match PlayerStatus.MAX_REGEN_PER_SEC.
 const MAX_REGEN_PER_SEC: float = 4.0
+## Movement speed cap, must match PlayerStatus.MAX_MOVE_SPEED.
 const MAX_MOVE_SPEED: float = 130.0
+## Thorns cap, must match PlayerStatus.MAX_THORNS.
 const MAX_THORNS: int = 4
 
 
+## Returns true if the given upgrade key would still have an effect for these stats.
 func _is_key_effective(stats: PlayerStatus, key: String) -> bool:
 	match key:
 		"regen":
@@ -22,9 +32,11 @@ func _is_key_effective(stats: PlayerStatus, key: String) -> bool:
 		"move_speed":
 			return stats.base_speed < MAX_MOVE_SPEED
 		_:
+			# Bullet speed, damage and max HP currently have no cap.
 			return true
 
 
+## Filters a pool of keys to only include upgrades that still have an effect.
 func _effective_keys(stats: PlayerStatus, pool: Array) -> Array:
 	var result: Array = []
 	for k in pool:
@@ -33,6 +45,8 @@ func _effective_keys(stats: PlayerStatus, pool: Array) -> Array:
 	return result
 
 
+## Picks a random effective key from a pool, ignoring excluded keys.[br]
+## Falls back to a generic random pick if nothing effective is available.
 func _random_effective_from_pool(stats: PlayerStatus, pool: Array, exclude: Array) -> String:
 	var candidates: Array = []
 	for k in pool:
@@ -43,10 +57,13 @@ func _random_effective_from_pool(stats: PlayerStatus, pool: Array, exclude: Arra
 	return candidates[randi() % candidates.size()]
 
 
+## Rolls two upgrade options based on the current archetype and progression.[br]
+## Enforces early-game guarantees and late-game bias between branches.
 func roll_options(stats: PlayerStatus) -> Array:
 	var arch: String = stats.get_archetype()
 	var count: int = stats.get_upgrade_count()
 
+	# First two upgrades: guarantee one shooter and one thorns option.
 	if arch == "" and count < 2:
 		var shooter_pool = _effective_keys(stats, SHOOTER_KEYS)
 		if shooter_pool.is_empty():
@@ -63,10 +80,12 @@ func roll_options(stats: PlayerStatus) -> Array:
 			opts.reverse()
 		return opts
 
+	# Shooter archetype: third upgrade guarantees a movement speed option if still useful.
 	if arch == "shooter" and count == 2 and stats.move_speed_upgrades == 0 and _is_key_effective(stats, "move_speed"):
 		var other_key: String = _random_effective_from_pool(stats, UPGRADE_KEYS, ["move_speed"])
 		return [build_opt("move_speed"), build_opt(other_key)]
 
+	# Thorns archetype: enforce regen/thorns core picks in early upgrades if missing.
 	if arch == "thorns":
 		var need_regen: bool = stats.regen_upgrades == 0 and _is_key_effective(stats, "regen")
 		var need_thorns: bool = stats.thorns_upgrades == 0 and _is_key_effective(stats, "thorns")
@@ -85,6 +104,7 @@ func roll_options(stats: PlayerStatus) -> Array:
 				var other2: String = _random_effective_from_pool(stats, UPGRADE_KEYS, ["thorns"])
 				return [build_opt("thorns"), build_opt(other2)]
 
+	# Late game: bias toward own tree or opposite tree depending on power curve.
 	var prefer_other: bool = stats.is_ahead_of_curve()
 
 	var pool: Array = []
@@ -101,6 +121,7 @@ func roll_options(stats: PlayerStatus) -> Array:
 	else:
 		pool = UPGRADE_KEYS.duplicate()
 
+	# Always mix in neutral upgrades (e.g., move_speed).
 	for k in NEUTRAL_KEYS:
 		if not pool.has(k):
 			pool.append(k)
@@ -115,6 +136,8 @@ func roll_options(stats: PlayerStatus) -> Array:
 	return [build_opt(eff_pool[0]), build_opt(eff_pool[1])]
 
 
+## Picks a random key from the pool while ignoring the excluded ones.[br]
+## Used as a low-level helper when no effectiveness filter is applied.
 func _random_key_from_pool(pool: Array, exclude: Array) -> String:
 	var candidates: Array = []
 	for k in pool:
@@ -125,6 +148,8 @@ func _random_key_from_pool(pool: Array, exclude: Array) -> String:
 	return candidates[randi() % candidates.size()]
 
 
+## Builds a display dictionary for a given upgrade key.[br]
+## Each dictionary includes the internal key, a title and a description.
 func build_opt(key: String) -> Dictionary:
 	match key:
 		"bullet_speed":

@@ -1,9 +1,10 @@
-Button
-Label
+Label      - Matches the "text" keyword.
 AudioStreamPlayer
 Node
 Node2D
+Label
 VBoxContainer
+Button
 TextureRect
 TextureProgressBar
 Panel

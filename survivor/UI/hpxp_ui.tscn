@@ -53,14 +53,16 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HPLabel" type="Label" parent="."]
-offset_left = 11.0
-offset_top = 91.0
-offset_right = 51.0
-offset_bottom = 114.0
-
-[node name="XPLabel" type="Label" parent="."]
-offset_left = 12.0
-offset_top = 74.0
-offset_right = 52.0
-offset_bottom = 97.0
+[node name="TimeText" type="Label" parent="Frame"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 2023.5203
+offset_top = -49.999996
+offset_right = 2108.545
+offset_bottom = 3.0000038
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1

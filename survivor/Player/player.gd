@@ -1,3 +1,4 @@
+#player.gd
 class_name Player # allows this script to be treated as type Player
 
 extends CharacterBody2D	# indicates the type of Node this script is attached to
@@ -66,7 +67,7 @@ func _shoot(dir: Vector2, target: Node2D=null) -> void:
 	if "target" in b: b.target = target
 	var dmg := base_bullet_damage
 	if stats != null:
-		dmg += stats.damage_plus
+		dmg = stats.base_bullet_damage + stats.damage_plus
 	if "damage" in b:
 		b.damage = dmg
 	get_tree().current_scene.add_child(b)
@@ -78,7 +79,7 @@ func _physics_process(_delta:float) -> void:
 	var input_dir = Input.get_vector("left","right","up","down")
 	var spd := base_speed
 	if stats != null:
-		spd *= stats.move_speed_mul
+		spd = stats.base_speed * stats.move_speed_mul
 	velocity = input_dir * spd
 	if input_dir.length() > 0.01:
 		if !_moving:

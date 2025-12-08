@@ -1,3 +1,4 @@
+#enemy_spawner.gd
 extends CollisionShape2D
 
 var _player: Node2D = null
@@ -35,7 +36,11 @@ func _ready() -> void:
 	enemies.clear()
 	
 	# Mark start time for capacity growth
-	_start_ms = Time.get_ticks_msec()
+	var game := get_tree().current_scene
+	if game != null and "start_ms" in game:
+		_start_ms = game.start_ms
+	else:
+		_start_ms = Time.get_ticks_msec()
 	
 	_player = get_tree().get_first_node_in_group(GROUP_PLAYER) as Player
 	

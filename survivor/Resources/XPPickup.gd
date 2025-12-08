@@ -1,3 +1,4 @@
+#XPPickup.gd
 class_name XPPickup
 extends Area2D
 

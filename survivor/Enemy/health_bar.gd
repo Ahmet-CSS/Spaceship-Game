@@ -1,3 +1,4 @@
+#health_baar.gd
 extends Node2D
 
 func _draw() -> void:

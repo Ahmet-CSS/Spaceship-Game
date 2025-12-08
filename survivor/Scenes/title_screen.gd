@@ -1,3 +1,4 @@
+#title_screen.gd
 extends Control
 
 var game_scene: PackedScene = load("res://Scenes/game.tscn")

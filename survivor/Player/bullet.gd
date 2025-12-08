@@ -1,3 +1,4 @@
+#bullet.gd
 extends Area2D
 
 # Bullet travel speed

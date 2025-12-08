@@ -1,3 +1,4 @@
+#detail_status_ui.gd
 extends CanvasLayer
 
 @onready var body: Label = $"NinePatchRect/StatusTitle/Status"
@@ -20,18 +21,9 @@ func _refresh() -> void:
 	lines.append("")
 	lines.append("Max Health: %d" % stats.max_hp)
 	lines.append("Bullet Speed Multiplier: %.1f" % stats.bullet_speed_mul)
-	var game := get_tree().current_scene
-	var base_dmg := 1
-	if game and game.has_node("Player"):
-		var p := game.get_node("Player")
-		if "base_bullet_damage" in p:
-			base_dmg = int(p.base_bullet_damage)
-	lines.append("Damage: %d" % (base_dmg + stats.damage_plus))
+	lines.append("Damage: %d" % (stats.base_bullet_damage + stats.damage_plus))
 
-	if game and game.has_node("Player"):
-		var p := game.get_node("Player")
-		if "base_speed" in p:
-			var move_speed := float(p.base_speed) * stats.move_speed_mul
-			lines.append("Movement Speed: %.1f" % move_speed)
+	var move_speed: float = stats.base_speed * stats.move_speed_mul
+	lines.append("Movement Speed: %.1f" % move_speed)
 
 	body.text = "\n".join(lines)

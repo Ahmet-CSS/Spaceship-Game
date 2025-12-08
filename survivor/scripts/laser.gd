@@ -1,3 +1,4 @@
+#laser.gd
 extends Area2D
 
 @export var speed := 600.0

@@ -1,3 +1,4 @@
+#PlayerStatus.gd
 extends Node
 class_name PlayerStatus
 
@@ -8,6 +9,9 @@ var xp: int = 0
 var max_hp: int = 100
 var hp: int = max_hp
 
+var base_speed: float = 220.0
+var base_bullet_damage: int = 1
+
 var bullet_speed_mul: float = 1.0
 var move_speed_mul: float = 1.0
 var damage_plus: int = 0
@@ -16,7 +20,8 @@ var damage_plus: int = 0
 @export var xp_growth: float = 1.25
 var xp_to_next: int = xp_base
 
-const UPGRADE_KEYS := ["bullet_speed", "damage", "move_speed", "max_hp"]
+const UpgradeDataScript := preload("res://Resources/UpgradeData.gd")
+var upgrade_data = UpgradeDataScript.new()
 
 func _xp_required_for(lvl: int) -> int:
 	return int(round(xp_base * pow(xp_growth, float(lvl - 1))))
@@ -48,23 +53,13 @@ func _ready() -> void:
 	cal_xp_needed()
 	
 func _roll_options() -> Array:
-	var bag := UPGRADE_KEYS.duplicate()
-	bag.shuffle()
-	return [_build_opt(bag[0]), _build_opt(bag[1])]
+	return upgrade_data.roll_options()
 
-
-func _build_opt(key: String) -> Dictionary:
-	match key:
-		"bullet_speed":
-			return {"key": key, "title": "Bullet Speed", "desc": "Increase bullet speed"}
-		"damage":
-			return {"key": key, "title": "Damage", "desc": "Increase bullet damage"}
-		"move_speed":
-			return {"key": key, "title": "Move Speed", "desc": "Increase movement speed"}
-		"max_hp":
-			return {"key": key, "title": "Max Health", "desc": "Increase maximum health"}
-	return {"key": key, "title": key, "desc": ""}
-
+func init_from_player(p: Player) -> void:
+	base_speed = p.base_speed
+	base_bullet_damage = p.base_bullet_damage
+	cal_xp_needed()
+	emit_signal("stats_changed")
 
 func add_xp(amount: int) -> void:
 	print("[XP] add_xp called, amount=", amount, "  curr_xp=", xp)

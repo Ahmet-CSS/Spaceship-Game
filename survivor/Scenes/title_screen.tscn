@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://do46v33skcug4" path="res://Scenes/title_screen.gd" id="1_klylv"]
 [ext_resource type="AudioStream" uid="uid://cpj43h3rifslc" path="res://Assets/audio/mixkit-Backround-music-686.mp3" id="2_4gxqj"]
-[ext_resource type="AudioStream" uid="uid://b0p087l11oyo1" path="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3" id="3_twnyg"]
+[ext_resource type="AudioStream" uid="uid://bgane7ypxo7iq" path="res://Assets/audio/mixkit-clicking-on-UI-button-2037.mp3" id="3_twnyg"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3

@@ -3,7 +3,7 @@ class_name Player # allows this script to be treated as type Player
 
 extends CharacterBody2D	# indicates the type of Node this script is attached to
 
-@export var base_speed: float = 220.0	# A speed variable that determines how many pixels the object should move per second
+@export var base_speed: float = 100.0	# A speed variable that determines how many pixels the object should move per second
 # @export allows this variable to be configured in the inspector, instead of needing to hardcode value in script
 
 # this method is called each time a step in the physics simulation is calculated
@@ -79,7 +79,7 @@ func _physics_process(_delta:float) -> void:
 	var input_dir = Input.get_vector("left","right","up","down")
 	var spd := base_speed
 	if stats != null:
-		spd = stats.base_speed * stats.move_speed_mul
+		spd = stats.base_speed
 	velocity = input_dir * spd
 	if input_dir.length() > 0.01:
 		if !_moving:
@@ -101,6 +101,7 @@ func _physics_process(_delta:float) -> void:
 		else:
 			dir = _random_dir()
 		_shoot(dir, target)
+		
 		var interval := fire_interval
 		if stats != null:
 			interval = fire_interval / stats.fire_rate_mul

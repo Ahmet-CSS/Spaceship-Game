@@ -3,25 +3,29 @@ class_name Enemy
 
 extends Area2D
 
-@export var move_speed: float = 50
+@export var move_speed: float = 100
 var tilt_angle := 0.0
 
 # Base enemy health and health growth interval
-@export var base_health: int = 1
-@export var health_interval_sec: int = 30
+@export var base_health: int = 2
+@export var health_interval_sec: int = 40
 var max_health: int = 1
 var health: int = 1
 
 # XP drop settings
 @export var xp_pickup_scene: PackedScene
-@export var xp_drop_chance: float = 0.6
+@export var xp_drop_chance: float = 0.7
 #@export var xp_min: int = 1
 #@export var xp_max: int = 2
 
 # attack settings
 @export var attack_range: float = 60.0       
 @export var attack_interval: float = 0.5     
-@export var attack_damage: int = 5           
+@export var attack_damage: int = 3
+
+@export var late_attack_time_sec: float = 240.0
+@export var late_attack_damage: int = 6
+	   
 var _attack_cd: float = 0.0
 var _player: Player
 
@@ -53,7 +57,15 @@ func _physics_process(delta: float) -> void:
 		# if in range check cooldown, deal damage when ready
 		_attack_cd -= delta
 		if _attack_cd <= 0.0:
-			_player.take_damage(attack_damage)
+			var dmg := attack_damage
+			var game := get_tree().current_scene
+			if game and "elapsed_time" in game and game.elapsed_time >= late_attack_time_sec:
+				dmg = late_attack_damage
+			_player.take_damage(dmg)
+
+			if _player.stats and _player.stats.thorns > 0:
+				apply_damage(_player.stats.thorns)
+
 			_attack_cd = attack_interval
 	
 	# Tilt based on movement direction
